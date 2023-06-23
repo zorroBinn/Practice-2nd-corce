@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Animation\Animation.cs" />
     <Compile Include="Animation\Animator.cs" />
+    <Compile Include="Create_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create_New.Designer.cs">
+      <DependentUpon>Create_New.cs</DependentUpon>
+    </Compile>
     <Compile Include="Drawer.cs" />
     <Compile Include="Main_Menu.cs">
       <SubType>Form</SubType>
@@ -65,6 +71,9 @@
     <Compile Include="yt_Button.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Create_New.resx">
+      <DependentUpon>Create_New.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main_Menu.resx">
       <DependentUpon>Main_Menu.cs</DependentUpon>
     </EmbeddedResource>
