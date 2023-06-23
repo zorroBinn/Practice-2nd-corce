@@ -38,7 +38,7 @@
             // Main_Menu_Gif
             // 
             this.Main_Menu_Gif.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Main_Menu_Gif.Image = ((System.Drawing.Image)(resources.GetObject("Main_Menu_Gif.Image")));
+            this.Main_Menu_Gif.Image = global::Practice_2nd_corce.Properties.Resources.DNA_gif;
             this.Main_Menu_Gif.Location = new System.Drawing.Point(0, 0);
             this.Main_Menu_Gif.Name = "Main_Menu_Gif";
             this.Main_Menu_Gif.Size = new System.Drawing.Size(1584, 861);

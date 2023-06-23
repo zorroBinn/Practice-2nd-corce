@@ -95,5 +95,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\create.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bacteria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\virus1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DNA-gif.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
