@@ -962,7 +962,6 @@
             this.Name = "Create_New";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create New";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Create_New_FormClosed);
             this.image_tab.ResumeLayout(false);
             this.image_bacteria.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bacteria)).EndInit();

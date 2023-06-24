@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace Practice_2nd_corce
 {
@@ -45,26 +46,34 @@ namespace Practice_2nd_corce
         private void trackBar_bacteria_incub_Scroll(object sender, EventArgs e)
         {
             this.bacteria_incub.Text = this.trackBar_bacteria_incub.Value.ToString();
-            if (this.trackBar_bacteria_incub.Value > 1)
+            if (this.trackBar_bacteria_incub.Value == 1)
             {
-                this.label2.Text = "дней";
+                this.label2.Text = "день";
+            }
+            else if (this.trackBar_bacteria_incub.Value < 5 && this.trackBar_bacteria_incub.Value > 1)
+            {
+                this.label2.Text = "дня";
             }
             else
             {
-                this.label2.Text = "день";
+                this.label2.Text = "дней";
             }
         }
 
         private void trackBar_bacteria_illness_Scroll(object sender, EventArgs e)
         {
             this.bacteria_illness.Text = this.trackBar_bacteria_illness.Value.ToString();
-            if (this.trackBar_bacteria_illness.Value > 1)
+            if (this.trackBar_bacteria_illness.Value == 1)
             {
-                this.label3.Text = "дней";
+                this.label3.Text = "день";
+            }
+            else if (this.trackBar_bacteria_illness.Value < 5 && this.trackBar_bacteria_illness.Value > 1)
+            {
+                this.label3.Text = "дня";
             }
             else
             {
-                this.label3.Text = "день";
+                this.label3.Text = "дней";
             }
         }
 
@@ -81,26 +90,34 @@ namespace Practice_2nd_corce
         private void trackBar_virus_incub_Scroll(object sender, EventArgs e)
         {
             this.virus_incub.Text = this.trackBar_virus_incub.Value.ToString();
-            if (this.trackBar_virus_incub.Value > 1)
+            if (this.trackBar_virus_incub.Value == 1)
             {
-                this.day_virus_incub.Text = "дней";
+                this.day_virus_incub.Text = "день";
+            }
+            else if (this.trackBar_virus_illness.Value < 5 && this.trackBar_virus_illness.Value > 1)
+            {
+                this.day_virus_incub.Text = "дня";
             }
             else
             {
-                this.day_virus_incub.Text = "день";
+                this.day_virus_incub.Text = "дней";
             }
         }
 
         private void trackBar_virus_illness_Scroll(object sender, EventArgs e)
         {
             this.virus_illness.Text = this.trackBar_virus_illness.Value.ToString();
-            if (this.trackBar_virus_illness.Value > 1)
+            if (this.trackBar_virus_illness.Value == 1)
             {
-                this.day_virus_illness.Text = "дней";
+                this.day_virus_illness.Text = "день";
+            }
+            else if (this.trackBar_virus_illness.Value < 5 && this.trackBar_virus_illness.Value > 1)
+            {
+                this.day_virus_illness.Text = "дня";
             }
             else
             {
-                this.day_virus_illness.Text = "день";
+                this.day_virus_illness.Text = "дней";
             }
         }
 
@@ -116,14 +133,18 @@ namespace Practice_2nd_corce
 
         private void trackBar_prion_illness_Scroll(object sender, EventArgs e)
         {
-            this.prion_illness.Text = this.trackBar_prion_illness.Value.ToString();
-            if (this.trackBar_prion_illness.Value % 100 != 1)
+            this.prion_illness.Text = this.trackBar_prion_illness.Value.ToString(); 
+            if (this.trackBar_prion_illness.Value % 10 == 1 && this.trackBar_prion_illness.Value % 100 != 11)
             {
-                this.day_prion_illness.Text = "дней";
+                this.day_prion_illness.Text = "день";
+            }
+            else if (this.trackBar_prion_illness.Value % 10 > 1 && this.trackBar_prion_illness.Value % 10 < 5 && (this.trackBar_prion_illness.Value % 100 < 10 || this.trackBar_prion_illness.Value % 100 > 20))
+            {
+                this.day_prion_illness.Text = "дня";
             }
             else
             {
-                this.day_prion_illness.Text = "день";
+                this.day_prion_illness.Text = "дней";
             }
         }
 
@@ -207,20 +228,18 @@ namespace Practice_2nd_corce
                     file.WriteLine(this.prion_death.Text);
                 }
                 file.Close();
+                this.Owner.Show();
                 this.Close();
             }
             catch (Exception) 
             {
                 MessageBox.Show("Ошибка создания", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
-            }
-        }
-
-        private void Create_New_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (File.Exists("dt.dt") == false)
-            {
+                if (File.Exists("dt.dt"))
+                {
+                    File.Delete("dt.dt");
+                }
                 this.Owner.Show();
+                this.Close();
             }
         }
     }
