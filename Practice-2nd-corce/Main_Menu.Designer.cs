@@ -102,6 +102,7 @@
             this.Name = "Main_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Epidemic Inception";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_Menu_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.Main_Menu_Gif)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

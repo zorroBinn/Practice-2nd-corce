@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,14 @@ namespace Practice_2nd_corce
             create.Owner = this;
             create.Show();
             this.Hide();
+        }
+
+        private void Main_Menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(File.Exists("dt.dt") == true)
+            {
+                File.Delete("dt.dt");
+            }
         }
     }
 }

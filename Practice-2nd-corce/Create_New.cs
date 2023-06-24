@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -173,6 +174,54 @@ namespace Practice_2nd_corce
             check_textUpdate(comboBox_prion_name);
         }
 
-        
+        private void Create_Button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamWriter file = new StreamWriter("dt.dt", false);
+                if (create_tabs.SelectedIndex == 0)
+                {
+                    file.WriteLine("0");
+                    file.WriteLine(this.comboBox_bacteria_name.Text);
+                    file.WriteLine(this.bacteria_infection.Text);
+                    file.WriteLine(this.bacteria_incub.Text);
+                    file.WriteLine(this.bacteria_illness.Text);
+                    file.WriteLine(this.bacteria_death.Text);
+                }
+                else if (create_tabs.SelectedIndex == 1)
+                {
+                    file.WriteLine("1");
+                    file.WriteLine(this.comboBox_virus_name.Text);
+                    file.WriteLine(this.virus_infection.Text);
+                    file.WriteLine(this.virus_incub.Text);
+                    file.WriteLine(this.virus_illness.Text);
+                    file.WriteLine(this.virus_death.Text);
+                }
+                else if (create_tabs.SelectedIndex == 2)
+                {
+                    file.WriteLine("2");
+                    file.WriteLine(this.comboBox_prion_name.Text);
+                    file.WriteLine(this.prion_infection.Text);
+                    file.WriteLine("0");
+                    file.WriteLine(this.prion_illness.Text);
+                    file.WriteLine(this.prion_death.Text);
+                }
+                file.Close();
+                this.Close();
+            }
+            catch (Exception) 
+            {
+                MessageBox.Show("Ошибка создания", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
+        }
+
+        private void Create_New_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (File.Exists("dt.dt") == false)
+            {
+                this.Owner.Show();
+            }
+        }
     }
 }

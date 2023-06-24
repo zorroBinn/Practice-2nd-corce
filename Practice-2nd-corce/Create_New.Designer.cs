@@ -942,6 +942,7 @@
             this.Create_Button.UseVisualStyleBackColor = false;
             this.Create_Button.UseZoomEffectOnHover = false;
             this.Create_Button.Visible = false;
+            this.Create_Button.Click += new System.EventHandler(this.Create_Button_Click);
             // 
             // Create_New
             // 
@@ -961,6 +962,7 @@
             this.Name = "Create_New";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create New";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Create_New_FormClosed);
             this.image_tab.ResumeLayout(false);
             this.image_bacteria.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bacteria)).EndInit();
