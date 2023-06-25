@@ -228,7 +228,6 @@ namespace Practice_2nd_corce
                     file.WriteLine(this.prion_death.Text);
                 }
                 file.Close();
-                this.Owner.Show();
                 this.Close();
             }
             catch (Exception) 
@@ -238,9 +237,13 @@ namespace Practice_2nd_corce
                 {
                     File.Delete("dt.dt");
                 }
-                this.Owner.Show();
                 this.Close();
             }
+        }
+
+        private void Create_New_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Owner.Show();
         }
     }
 }

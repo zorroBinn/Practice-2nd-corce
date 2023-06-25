@@ -33,5 +33,16 @@ namespace Practice_2nd_corce
                 File.Delete("dt.dt");
             }
         }
+
+        private void Main_Menu_Activated(object sender, EventArgs e)
+        {
+            if (File.Exists("dt.dt") == true)
+            {
+                Imitation imitation = new Imitation();
+                imitation.Owner = this;
+                imitation.Show();
+                this.Hide();
+            }
+        }
     }
 }

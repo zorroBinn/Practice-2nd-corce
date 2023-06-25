@@ -590,6 +590,7 @@
             // 
             this.trackBar_virus_illness.LargeChange = 1;
             this.trackBar_virus_illness.Location = new System.Drawing.Point(277, 236);
+            this.trackBar_virus_illness.Maximum = 30;
             this.trackBar_virus_illness.Minimum = 1;
             this.trackBar_virus_illness.Name = "trackBar_virus_illness";
             this.trackBar_virus_illness.Size = new System.Drawing.Size(340, 45);
@@ -603,6 +604,7 @@
             // 
             this.trackBar_virus_incub.LargeChange = 1;
             this.trackBar_virus_incub.Location = new System.Drawing.Point(277, 162);
+            this.trackBar_virus_incub.Maximum = 15;
             this.trackBar_virus_incub.Minimum = 1;
             this.trackBar_virus_incub.Name = "trackBar_virus_incub";
             this.trackBar_virus_incub.Size = new System.Drawing.Size(340, 45);
@@ -836,6 +838,7 @@
             // 
             this.trackBar_bacteria_illness.LargeChange = 1;
             this.trackBar_bacteria_illness.Location = new System.Drawing.Point(277, 235);
+            this.trackBar_bacteria_illness.Maximum = 20;
             this.trackBar_bacteria_illness.Minimum = 1;
             this.trackBar_bacteria_illness.Name = "trackBar_bacteria_illness";
             this.trackBar_bacteria_illness.Size = new System.Drawing.Size(340, 45);
@@ -962,6 +965,7 @@
             this.Name = "Create_New";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create New";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Create_New_FormClosed);
             this.image_tab.ResumeLayout(false);
             this.image_bacteria.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bacteria)).EndInit();
