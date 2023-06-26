@@ -582,9 +582,9 @@
             this.virus_infection.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.virus_infection.Location = new System.Drawing.Point(632, 92);
             this.virus_infection.Name = "virus_infection";
-            this.virus_infection.Size = new System.Drawing.Size(26, 29);
+            this.virus_infection.Size = new System.Drawing.Size(39, 29);
             this.virus_infection.TabIndex = 17;
-            this.virus_infection.Text = "1";
+            this.virus_infection.Text = "10";
             // 
             // trackBar_virus_illness
             // 

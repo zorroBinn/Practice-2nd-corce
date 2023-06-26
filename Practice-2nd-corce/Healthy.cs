@@ -16,8 +16,23 @@ namespace Practice_2nd_corce
         {
             this.state = "Здоров";
             this.color = System.Drawing.Color.Silver;
-            Random random = new Random();
-            this.immunity = random.Next(0,99);
+            RandomAge();
+            if (this.age < 25)
+            {
+                this.immunity = Randomization.Rand(0, 95);
+            }
+            else if (this.age >= 25 && this.age <= 50)
+            {
+                this.immunity = Randomization.Rand(0, 70);
+            }
+            else if (this.age >= 50 && this.age <= 70)
+            {
+                this.immunity = Randomization.Rand(0, 50);
+            }
+            else
+            {
+                this.immunity = Randomization.Rand(0, 20);
+            }
         }
     }
 }

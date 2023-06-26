@@ -48,6 +48,7 @@
             this.illness = new System.Windows.Forms.Label();
             this.death = new System.Windows.Forms.Label();
             this.percent_death = new System.Windows.Forms.Label();
+            this.day_form = new yt_DesignUI.yt_Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -192,11 +193,11 @@
             this.label_infection.AutoSize = true;
             this.label_infection.Font = new System.Drawing.Font("Arial", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_infection.ForeColor = System.Drawing.Color.Navy;
-            this.label_infection.Location = new System.Drawing.Point(1087, 226);
+            this.label_infection.Location = new System.Drawing.Point(1141, 227);
             this.label_infection.Name = "label_infection";
-            this.label_infection.Size = new System.Drawing.Size(443, 32);
+            this.label_infection.Size = new System.Drawing.Size(352, 32);
             this.label_infection.TabIndex = 7;
-            this.label_infection.Text = "Вероятность передачи (дней):";
+            this.label_infection.Text = "Вероятность передачи:";
             // 
             // label_incub
             // 
@@ -214,11 +215,11 @@
             this.label_illness.AutoSize = true;
             this.label_illness.Font = new System.Drawing.Font("Arial", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_illness.ForeColor = System.Drawing.Color.Navy;
-            this.label_illness.Location = new System.Drawing.Point(1192, 433);
+            this.label_illness.Location = new System.Drawing.Point(1161, 430);
             this.label_illness.Name = "label_illness";
-            this.label_illness.Size = new System.Drawing.Size(241, 32);
+            this.label_illness.Size = new System.Drawing.Size(332, 32);
             this.label_illness.TabIndex = 9;
-            this.label_illness.Text = "Период болезни:";
+            this.label_illness.Text = "Период болезни (дней):";
             // 
             // label_death
             // 
@@ -319,11 +320,40 @@
             this.percent_death.Text = "%";
             this.percent_death.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // day_form
+            // 
+            this.day_form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.day_form.BackColorAdditional = System.Drawing.Color.Navy;
+            this.day_form.BackColorGradientEnabled = true;
+            this.day_form.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.day_form.BorderColor = System.Drawing.Color.Tomato;
+            this.day_form.BorderColorEnabled = false;
+            this.day_form.BorderColorOnHover = System.Drawing.Color.Tomato;
+            this.day_form.BorderColorOnHoverEnabled = false;
+            this.day_form.Cursor = System.Windows.Forms.Cursors.Default;
+            this.day_form.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.day_form.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.day_form.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.day_form.Location = new System.Drawing.Point(1026, 20);
+            this.day_form.Name = "day_form";
+            this.day_form.RippleColor = System.Drawing.Color.Red;
+            this.day_form.RoundingEnable = true;
+            this.day_form.Size = new System.Drawing.Size(74, 42);
+            this.day_form.TabIndex = 19;
+            this.day_form.TabStop = false;
+            this.day_form.Text = "0";
+            this.day_form.TextHover = null;
+            this.day_form.UseDownPressEffectOnClick = false;
+            this.day_form.UseRippleEffect = false;
+            this.day_form.UseVisualStyleBackColor = false;
+            this.day_form.UseZoomEffectOnHover = false;
+            // 
             // Imitation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.Controls.Add(this.day_form);
             this.Controls.Add(this.percent_death);
             this.Controls.Add(this.death);
             this.Controls.Add(this.illness);
@@ -379,5 +409,6 @@
         private System.Windows.Forms.Label illness;
         private System.Windows.Forms.Label death;
         private System.Windows.Forms.Label percent_death;
+        private yt_DesignUI.yt_Button day_form;
     }
 }

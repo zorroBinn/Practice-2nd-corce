@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animation\Animation.cs" />
-    <Compile Include="Animation\Animator.cs" />
+    <Compile Include="ForDrawing\Animation\Animation.cs" />
+    <Compile Include="ForDrawing\Animation\Animator.cs" />
     <Compile Include="Create_New.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,7 +55,7 @@
       <DependentUpon>Create_New.cs</DependentUpon>
     </Compile>
     <Compile Include="Dead.cs" />
-    <Compile Include="Drawer.cs" />
+    <Compile Include="ForDrawing\Drawer.cs" />
     <Compile Include="Healthy.cs" />
     <Compile Include="Imitation.cs">
       <SubType>Form</SubType>
@@ -79,8 +79,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Disease.cs" />
+    <Compile Include="Randomization.cs" />
     <Compile Include="Recovered.cs" />
-    <Compile Include="yt_Button.cs">
+    <Compile Include="ForDrawing\yt_Button.cs">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Create_New.resx">

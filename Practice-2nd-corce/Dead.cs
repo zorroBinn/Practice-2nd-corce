@@ -16,7 +16,7 @@ namespace Practice_2nd_corce
         {
             this.dead_day = dead_day;
             this.state = "Мёртв";
-            this.color = System.Drawing.Color.MidnightBlue;
+            this.color = System.Drawing.Color.Black;
         }
     }
 }
