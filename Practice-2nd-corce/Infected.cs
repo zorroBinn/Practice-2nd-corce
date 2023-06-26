@@ -49,9 +49,9 @@ namespace Practice_2nd_corce
             this.infection_days -= 1;
         }
         
-        public void App_Day_Of_Disease()
+        /*public void App_Day_Of_Disease()
         {
             this.day_of_disease += 1;
-        }
+        }*/
     }
 }

@@ -28,12 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Imitation));
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.button_reset = new yt_DesignUI.yt_Button();
-            this.button_step = new yt_DesignUI.yt_Button();
-            this.button_play = new yt_DesignUI.yt_Button();
-            this.button_pause = new yt_DesignUI.yt_Button();
             this.label_type = new System.Windows.Forms.Label();
             this.label_name = new System.Windows.Forms.Label();
             this.label_infection = new System.Windows.Forms.Label();
@@ -48,123 +45,24 @@
             this.illness = new System.Windows.Forms.Label();
             this.death = new System.Windows.Forms.Label();
             this.percent_death = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.day_form = new yt_DesignUI.yt_Button();
+            this.button_pause = new yt_DesignUI.yt_Button();
+            this.button_play = new yt_DesignUI.yt_Button();
+            this.button_step = new yt_DesignUI.yt_Button();
+            this.button_reset = new yt_DesignUI.yt_Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox
             // 
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Location = new System.Drawing.Point(20, 20);
+            this.pictureBox.Location = new System.Drawing.Point(20, 1);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(1000, 750);
+            this.pictureBox.Size = new System.Drawing.Size(1000, 800);
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
-            // 
-            // button_reset
-            // 
-            this.button_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button_reset.BackColorAdditional = System.Drawing.Color.Navy;
-            this.button_reset.BackColorGradientEnabled = true;
-            this.button_reset.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.button_reset.BorderColor = System.Drawing.Color.Tomato;
-            this.button_reset.BorderColorEnabled = false;
-            this.button_reset.BorderColorOnHover = System.Drawing.Color.Tomato;
-            this.button_reset.BorderColorOnHoverEnabled = false;
-            this.button_reset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_reset.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_reset.ForeColor = System.Drawing.Color.White;
-            this.button_reset.Location = new System.Drawing.Point(20, 792);
-            this.button_reset.Name = "button_reset";
-            this.button_reset.RippleColor = System.Drawing.Color.Red;
-            this.button_reset.RoundingEnable = true;
-            this.button_reset.Size = new System.Drawing.Size(172, 42);
-            this.button_reset.TabIndex = 1;
-            this.button_reset.Text = "Сбросить";
-            this.button_reset.TextHover = null;
-            this.button_reset.UseDownPressEffectOnClick = true;
-            this.button_reset.UseRippleEffect = true;
-            this.button_reset.UseVisualStyleBackColor = false;
-            this.button_reset.UseZoomEffectOnHover = false;
-            // 
-            // button_step
-            // 
-            this.button_step.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button_step.BackColorAdditional = System.Drawing.Color.Navy;
-            this.button_step.BackColorGradientEnabled = true;
-            this.button_step.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.button_step.BorderColor = System.Drawing.Color.Tomato;
-            this.button_step.BorderColorEnabled = false;
-            this.button_step.BorderColorOnHover = System.Drawing.Color.Tomato;
-            this.button_step.BorderColorOnHoverEnabled = false;
-            this.button_step.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_step.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_step.ForeColor = System.Drawing.Color.White;
-            this.button_step.Location = new System.Drawing.Point(848, 792);
-            this.button_step.Name = "button_step";
-            this.button_step.RippleColor = System.Drawing.Color.Red;
-            this.button_step.RoundingEnable = true;
-            this.button_step.Size = new System.Drawing.Size(172, 42);
-            this.button_step.TabIndex = 2;
-            this.button_step.Text = "Шаг";
-            this.button_step.TextHover = null;
-            this.button_step.UseDownPressEffectOnClick = true;
-            this.button_step.UseRippleEffect = true;
-            this.button_step.UseVisualStyleBackColor = false;
-            this.button_step.UseZoomEffectOnHover = false;
-            // 
-            // button_play
-            // 
-            this.button_play.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button_play.BackColorAdditional = System.Drawing.Color.Navy;
-            this.button_play.BackColorGradientEnabled = true;
-            this.button_play.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.button_play.BorderColor = System.Drawing.Color.Tomato;
-            this.button_play.BorderColorEnabled = false;
-            this.button_play.BorderColorOnHover = System.Drawing.Color.Tomato;
-            this.button_play.BorderColorOnHoverEnabled = false;
-            this.button_play.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_play.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_play.ForeColor = System.Drawing.Color.White;
-            this.button_play.Location = new System.Drawing.Point(458, 792);
-            this.button_play.Name = "button_play";
-            this.button_play.RippleColor = System.Drawing.Color.Red;
-            this.button_play.RoundingEnable = true;
-            this.button_play.Size = new System.Drawing.Size(51, 42);
-            this.button_play.TabIndex = 3;
-            this.button_play.Text = " ▶";
-            this.button_play.TextHover = null;
-            this.button_play.UseDownPressEffectOnClick = true;
-            this.button_play.UseRippleEffect = true;
-            this.button_play.UseVisualStyleBackColor = false;
-            this.button_play.UseZoomEffectOnHover = false;
-            // 
-            // button_pause
-            // 
-            this.button_pause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button_pause.BackColorAdditional = System.Drawing.Color.Navy;
-            this.button_pause.BackColorGradientEnabled = true;
-            this.button_pause.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.button_pause.BorderColor = System.Drawing.Color.Tomato;
-            this.button_pause.BorderColorEnabled = false;
-            this.button_pause.BorderColorOnHover = System.Drawing.Color.Tomato;
-            this.button_pause.BorderColorOnHoverEnabled = false;
-            this.button_pause.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_pause.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_pause.ForeColor = System.Drawing.Color.White;
-            this.button_pause.Location = new System.Drawing.Point(515, 792);
-            this.button_pause.Name = "button_pause";
-            this.button_pause.RippleColor = System.Drawing.Color.Red;
-            this.button_pause.RoundingEnable = true;
-            this.button_pause.Size = new System.Drawing.Size(51, 42);
-            this.button_pause.TabIndex = 4;
-            this.button_pause.Text = " ⏸";
-            this.button_pause.TextHover = null;
-            this.button_pause.UseDownPressEffectOnClick = true;
-            this.button_pause.UseRippleEffect = true;
-            this.button_pause.UseVisualStyleBackColor = false;
-            this.button_pause.UseZoomEffectOnHover = false;
-            this.button_pause.Visible = false;
+            this.pictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox_Paint);
             // 
             // label_type
             // 
@@ -320,10 +218,15 @@
             this.percent_death.Text = "%";
             this.percent_death.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // timer
+            // 
+            this.timer.Interval = 400;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // day_form
             // 
-            this.day_form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.day_form.BackColorAdditional = System.Drawing.Color.Navy;
+            this.day_form.BackColor = System.Drawing.Color.Red;
+            this.day_form.BackColorAdditional = System.Drawing.Color.Black;
             this.day_form.BackColorGradientEnabled = true;
             this.day_form.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.day_form.BorderColor = System.Drawing.Color.Tomato;
@@ -333,8 +236,8 @@
             this.day_form.Cursor = System.Windows.Forms.Cursors.Default;
             this.day_form.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_form.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.day_form.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.day_form.Location = new System.Drawing.Point(1026, 20);
+            this.day_form.ForeColor = System.Drawing.Color.White;
+            this.day_form.Location = new System.Drawing.Point(1026, 1);
             this.day_form.Name = "day_form";
             this.day_form.RippleColor = System.Drawing.Color.Red;
             this.day_form.RoundingEnable = true;
@@ -347,6 +250,114 @@
             this.day_form.UseRippleEffect = false;
             this.day_form.UseVisualStyleBackColor = false;
             this.day_form.UseZoomEffectOnHover = false;
+            // 
+            // button_pause
+            // 
+            this.button_pause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button_pause.BackColorAdditional = System.Drawing.Color.Navy;
+            this.button_pause.BackColorGradientEnabled = true;
+            this.button_pause.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.button_pause.BorderColor = System.Drawing.Color.Tomato;
+            this.button_pause.BorderColorEnabled = false;
+            this.button_pause.BorderColorOnHover = System.Drawing.Color.Tomato;
+            this.button_pause.BorderColorOnHoverEnabled = false;
+            this.button_pause.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_pause.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_pause.ForeColor = System.Drawing.Color.White;
+            this.button_pause.Location = new System.Drawing.Point(515, 807);
+            this.button_pause.Name = "button_pause";
+            this.button_pause.RippleColor = System.Drawing.Color.Red;
+            this.button_pause.RoundingEnable = true;
+            this.button_pause.Size = new System.Drawing.Size(51, 42);
+            this.button_pause.TabIndex = 4;
+            this.button_pause.Text = " ⏸";
+            this.button_pause.TextHover = null;
+            this.button_pause.UseDownPressEffectOnClick = true;
+            this.button_pause.UseRippleEffect = true;
+            this.button_pause.UseVisualStyleBackColor = false;
+            this.button_pause.UseZoomEffectOnHover = false;
+            this.button_pause.Click += new System.EventHandler(this.button_pause_Click);
+            // 
+            // button_play
+            // 
+            this.button_play.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button_play.BackColorAdditional = System.Drawing.Color.Navy;
+            this.button_play.BackColorGradientEnabled = true;
+            this.button_play.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.button_play.BorderColor = System.Drawing.Color.Tomato;
+            this.button_play.BorderColorEnabled = false;
+            this.button_play.BorderColorOnHover = System.Drawing.Color.Tomato;
+            this.button_play.BorderColorOnHoverEnabled = false;
+            this.button_play.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_play.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_play.ForeColor = System.Drawing.Color.White;
+            this.button_play.Location = new System.Drawing.Point(458, 807);
+            this.button_play.Name = "button_play";
+            this.button_play.RippleColor = System.Drawing.Color.Red;
+            this.button_play.RoundingEnable = true;
+            this.button_play.Size = new System.Drawing.Size(51, 42);
+            this.button_play.TabIndex = 3;
+            this.button_play.Text = " ▶";
+            this.button_play.TextHover = null;
+            this.button_play.UseDownPressEffectOnClick = true;
+            this.button_play.UseRippleEffect = true;
+            this.button_play.UseVisualStyleBackColor = false;
+            this.button_play.UseZoomEffectOnHover = false;
+            this.button_play.Click += new System.EventHandler(this.button_play_Click);
+            // 
+            // button_step
+            // 
+            this.button_step.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button_step.BackColorAdditional = System.Drawing.Color.Navy;
+            this.button_step.BackColorGradientEnabled = true;
+            this.button_step.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.button_step.BorderColor = System.Drawing.Color.Tomato;
+            this.button_step.BorderColorEnabled = false;
+            this.button_step.BorderColorOnHover = System.Drawing.Color.Tomato;
+            this.button_step.BorderColorOnHoverEnabled = false;
+            this.button_step.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_step.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_step.ForeColor = System.Drawing.Color.White;
+            this.button_step.Location = new System.Drawing.Point(848, 807);
+            this.button_step.Name = "button_step";
+            this.button_step.RippleColor = System.Drawing.Color.Red;
+            this.button_step.RoundingEnable = true;
+            this.button_step.Size = new System.Drawing.Size(172, 42);
+            this.button_step.TabIndex = 2;
+            this.button_step.Text = "Шаг";
+            this.button_step.TextHover = null;
+            this.button_step.UseDownPressEffectOnClick = true;
+            this.button_step.UseRippleEffect = true;
+            this.button_step.UseVisualStyleBackColor = false;
+            this.button_step.UseZoomEffectOnHover = false;
+            this.button_step.Click += new System.EventHandler(this.button_step_Click);
+            // 
+            // button_reset
+            // 
+            this.button_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button_reset.BackColorAdditional = System.Drawing.Color.Navy;
+            this.button_reset.BackColorGradientEnabled = true;
+            this.button_reset.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.button_reset.BorderColor = System.Drawing.Color.Tomato;
+            this.button_reset.BorderColorEnabled = false;
+            this.button_reset.BorderColorOnHover = System.Drawing.Color.Tomato;
+            this.button_reset.BorderColorOnHoverEnabled = false;
+            this.button_reset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_reset.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_reset.ForeColor = System.Drawing.Color.White;
+            this.button_reset.Location = new System.Drawing.Point(20, 807);
+            this.button_reset.Name = "button_reset";
+            this.button_reset.RippleColor = System.Drawing.Color.Red;
+            this.button_reset.RoundingEnable = true;
+            this.button_reset.Size = new System.Drawing.Size(172, 42);
+            this.button_reset.TabIndex = 1;
+            this.button_reset.Text = "Сбросить";
+            this.button_reset.TextHover = null;
+            this.button_reset.UseDownPressEffectOnClick = true;
+            this.button_reset.UseRippleEffect = true;
+            this.button_reset.UseVisualStyleBackColor = false;
+            this.button_reset.UseZoomEffectOnHover = false;
+            this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
             // 
             // Imitation
             // 
@@ -410,5 +421,6 @@
         private System.Windows.Forms.Label death;
         private System.Windows.Forms.Label percent_death;
         private yt_DesignUI.yt_Button day_form;
+        private System.Windows.Forms.Timer timer;
     }
 }
