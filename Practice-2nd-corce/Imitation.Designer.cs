@@ -51,7 +51,12 @@
             this.button_play = new yt_DesignUI.yt_Button();
             this.button_step = new yt_DesignUI.yt_Button();
             this.button_reset = new yt_DesignUI.yt_Button();
+            this.groupBoxSpeed = new System.Windows.Forms.GroupBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.groupBoxSpeed.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox
@@ -220,7 +225,7 @@
             // 
             // timer
             // 
-            this.timer.Interval = 300;
+            this.timer.Interval = 400;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // day_form
@@ -235,7 +240,7 @@
             this.day_form.BorderColorOnHoverEnabled = false;
             this.day_form.Cursor = System.Windows.Forms.Cursors.Default;
             this.day_form.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.day_form.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.day_form.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.day_form.ForeColor = System.Drawing.Color.White;
             this.day_form.Location = new System.Drawing.Point(1026, 1);
             this.day_form.Name = "day_form";
@@ -307,7 +312,7 @@
             // 
             // button_step
             // 
-            this.button_step.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button_step.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button_step.BackColorAdditional = System.Drawing.Color.Navy;
             this.button_step.BackColorGradientEnabled = true;
             this.button_step.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
@@ -334,7 +339,7 @@
             // 
             // button_reset
             // 
-            this.button_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button_reset.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button_reset.BackColorAdditional = System.Drawing.Color.Navy;
             this.button_reset.BackColorGradientEnabled = true;
             this.button_reset.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
@@ -359,11 +364,63 @@
             this.button_reset.UseZoomEffectOnHover = false;
             this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
             // 
+            // groupBoxSpeed
+            // 
+            this.groupBoxSpeed.Controls.Add(this.radioButton3);
+            this.groupBoxSpeed.Controls.Add(this.radioButton2);
+            this.groupBoxSpeed.Controls.Add(this.radioButton1);
+            this.groupBoxSpeed.Location = new System.Drawing.Point(261, 807);
+            this.groupBoxSpeed.Name = "groupBoxSpeed";
+            this.groupBoxSpeed.Size = new System.Drawing.Size(191, 42);
+            this.groupBoxSpeed.TabIndex = 23;
+            this.groupBoxSpeed.TabStop = false;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton3.ForeColor = System.Drawing.Color.Navy;
+            this.radioButton3.Location = new System.Drawing.Point(124, 11);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(46, 27);
+            this.radioButton3.TabIndex = 25;
+            this.radioButton3.Text = "x3";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton2.ForeColor = System.Drawing.Color.Navy;
+            this.radioButton2.Location = new System.Drawing.Point(72, 11);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(46, 27);
+            this.radioButton2.TabIndex = 24;
+            this.radioButton2.Text = "x2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton1.ForeColor = System.Drawing.Color.Navy;
+            this.radioButton1.Location = new System.Drawing.Point(20, 11);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(46, 27);
+            this.radioButton1.TabIndex = 23;
+            this.radioButton1.Text = "x1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
             // Imitation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.Controls.Add(this.groupBoxSpeed);
             this.Controls.Add(this.day_form);
             this.Controls.Add(this.percent_death);
             this.Controls.Add(this.death);
@@ -394,6 +451,8 @@
             this.Text = "Imitation";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Imitation_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.groupBoxSpeed.ResumeLayout(false);
+            this.groupBoxSpeed.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -422,5 +481,9 @@
         private System.Windows.Forms.Label percent_death;
         private yt_DesignUI.yt_Button day_form;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.GroupBox groupBoxSpeed;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

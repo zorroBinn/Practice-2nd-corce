@@ -245,5 +245,33 @@ namespace Practice_2nd_corce
         {
             this.Owner.Show();
         }
+
+        private void CheckChar(KeyPressEventArgs args)
+        {
+            Char ch = (Char)args.KeyChar;
+            if (Char.IsLetterOrDigit(ch))
+            {
+                return;
+            }
+            else
+            {
+                args.Handled = true;
+            }
+        }
+
+        private void comboBox_bacteria_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CheckChar(e);
+        }
+
+        private void comboBox_virus_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CheckChar(e);
+        }
+
+        private void comboBox_prion_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CheckChar(e);
+        }
     }
 }

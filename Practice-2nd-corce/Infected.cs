@@ -25,12 +25,12 @@ namespace Practice_2nd_corce
             if (incub_days > 0)
             {
                 this.state = "Инкубациооный период";
-                this.color = System.Drawing.Color.MistyRose;
+                this.color = System.Drawing.Color.Salmon;
             }
             else 
             {
                 this.state = "Заражён";
-                this.color = System.Drawing.Color.Red;
+                this.color = System.Drawing.Color.Brown;
             }
         }
 
@@ -40,7 +40,7 @@ namespace Practice_2nd_corce
             if (this.incub_days == 0)
             {
                 this.state = "Заражён";
-                this.color = System.Drawing.Color.Red;
+                this.color = System.Drawing.Color.Brown;
             }
         }
 

@@ -250,6 +250,7 @@
             this.comboBox_prion_name.TabIndex = 29;
             this.comboBox_prion_name.SelectedIndexChanged += new System.EventHandler(this.comboBox_prion_name_SelectedIndexChanged);
             this.comboBox_prion_name.TextUpdate += new System.EventHandler(this.comboBox_prion_name_TextUpdate);
+            this.comboBox_prion_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_prion_name_KeyPress);
             // 
             // prion_name
             // 
@@ -383,7 +384,6 @@
             // 
             this.trackBar_prion_infection.LargeChange = 1;
             this.trackBar_prion_infection.Location = new System.Drawing.Point(277, 92);
-            this.trackBar_prion_infection.Maximum = 5;
             this.trackBar_prion_infection.Minimum = 1;
             this.trackBar_prion_infection.Name = "trackBar_prion_infection";
             this.trackBar_prion_infection.Size = new System.Drawing.Size(340, 45);
@@ -396,11 +396,11 @@
             // about_prion_label
             // 
             this.about_prion_label.AutoSize = true;
-            this.about_prion_label.Font = new System.Drawing.Font("Ink Free", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.about_prion_label.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.about_prion_label.ForeColor = System.Drawing.Color.DarkBlue;
             this.about_prion_label.Location = new System.Drawing.Point(23, 13);
             this.about_prion_label.Name = "about_prion_label";
-            this.about_prion_label.Size = new System.Drawing.Size(749, 69);
+            this.about_prion_label.Size = new System.Drawing.Size(725, 69);
             this.about_prion_label.TabIndex = 0;
             this.about_prion_label.Text = "Прион - очень сложный и медленно развивающийся патоген в головном мозге\r\nНе имеет" +
     " инкубационного периода, чрезвычайно смертелен\r\nИмеет очень маленькую вероятност" +
@@ -455,6 +455,7 @@
             this.comboBox_virus_name.TabIndex = 30;
             this.comboBox_virus_name.SelectedIndexChanged += new System.EventHandler(this.comboBox_virus_name_SelectedIndexChanged);
             this.comboBox_virus_name.TextUpdate += new System.EventHandler(this.comboBox_virus_name_TextUpdate);
+            this.comboBox_virus_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_virus_name_KeyPress);
             // 
             // virus_name
             // 
@@ -645,11 +646,11 @@
             // about_virus_label
             // 
             this.about_virus_label.AutoSize = true;
-            this.about_virus_label.Font = new System.Drawing.Font("Ink Free", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.about_virus_label.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.about_virus_label.ForeColor = System.Drawing.Color.DarkRed;
             this.about_virus_label.Location = new System.Drawing.Point(24, 13);
             this.about_virus_label.Name = "about_virus_label";
-            this.about_virus_label.Size = new System.Drawing.Size(512, 46);
+            this.about_virus_label.Size = new System.Drawing.Size(528, 48);
             this.about_virus_label.TabIndex = 0;
             this.about_virus_label.Text = "Вирус - чрезвычайно трудноконтролируемая болезнь\r\nИмеет высокую вероятность мутац" +
     "ии";
@@ -703,6 +704,7 @@
             this.comboBox_bacteria_name.TabIndex = 18;
             this.comboBox_bacteria_name.SelectedIndexChanged += new System.EventHandler(this.comboBox_bacteria_name_SelectedIndexChanged);
             this.comboBox_bacteria_name.TextUpdate += new System.EventHandler(this.comboBox_bacteria_name_TextUpdate);
+            this.comboBox_bacteria_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_bacteria_name_KeyPress);
             // 
             // bacteria_name
             // 
@@ -892,11 +894,11 @@
             // about_bacteria_label
             // 
             this.about_bacteria_label.AutoSize = true;
-            this.about_bacteria_label.Font = new System.Drawing.Font("Ink Free", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.about_bacteria_label.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.about_bacteria_label.ForeColor = System.Drawing.Color.DarkGreen;
             this.about_bacteria_label.Location = new System.Drawing.Point(21, 13);
             this.about_bacteria_label.Name = "about_bacteria_label";
-            this.about_bacteria_label.Size = new System.Drawing.Size(509, 46);
+            this.about_bacteria_label.Size = new System.Drawing.Size(522, 48);
             this.about_bacteria_label.TabIndex = 0;
             this.about_bacteria_label.Text = "Бактерия - наиболее распространённый тип болезни\r\nИмеет небольшую вероятность мут" +
     "ировать";
@@ -906,7 +908,7 @@
             this.create_tabs.Controls.Add(this.create_bacteria);
             this.create_tabs.Controls.Add(this.create_virus);
             this.create_tabs.Controls.Add(this.create_prion);
-            this.create_tabs.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.create_tabs.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.create_tabs.HotTrack = true;
             this.create_tabs.ItemSize = new System.Drawing.Size(100, 40);
             this.create_tabs.Location = new System.Drawing.Point(86, 164);

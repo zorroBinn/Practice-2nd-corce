@@ -16,7 +16,7 @@ namespace Practice_2nd_corce
         {
             this.day_of_recovery = day;
             this.state = "Исцелён";
-            this.color = System.Drawing.Color.PaleGreen;
+            this.color = System.Drawing.Color.LightGreen;
         }
     }
 }

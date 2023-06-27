@@ -15,7 +15,7 @@ namespace Practice_2nd_corce
         public Healthy()
         {
             this.state = "Здоров";
-            this.color = System.Drawing.Color.Silver;
+            this.color = System.Drawing.Color.Lavender;
             RandomAge();
             if (this.age < 25)
             {

@@ -19,14 +19,13 @@ namespace Practice_2nd_corce
         private const int Rows = 40;
         private const int Columns = 50;
         private const int SquareSize = 20;
-        
         private int Day;
         public Imitation()
         {
             InitializeComponent();
             disease = new Disease();
             Day = 0;
-            this.day_form.Text = Day.ToString();
+            day_form.Text = Day.ToString();
             Disease_Info_Update();
             persons = new Person[Rows, Columns];
             FillPerson();
@@ -120,6 +119,7 @@ namespace Practice_2nd_corce
                 button_pause.Visible = false;
                 button_play.Visible = false;
                 button_step.Visible = false;
+                groupBoxSpeed.Visible = false;
                 MessageBox.Show("Симуляция окончена", "Все зараженные выздоровели или умерли", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -149,7 +149,6 @@ namespace Practice_2nd_corce
             }
         }
 
-        // Метод для проверки соседей человека на наличие зараженных
         private void CheckNeighbors(int row, int column)
         {
             Healthy healthy = (Healthy)persons[row, column];
@@ -276,11 +275,36 @@ namespace Practice_2nd_corce
             button_pause.Visible = true;
             button_play.Visible = true;
             button_step.Visible = true;
+            groupBoxSpeed.Visible = true;
             Day = 0;
             day_form.Text = (++Day).ToString();
             FillPerson();
             InfectRandomPerson();
             pictureBox.Invalidate();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                timer.Interval = 400;
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+            {
+                timer.Interval = 200;
+            }
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton3.Checked)
+            {
+                timer.Interval = 100;
+            }
         }
     }
 }
