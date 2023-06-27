@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -102,24 +103,44 @@ namespace Practice_2nd_corce
             persons[row, column] = new Infected(disease.Incub, disease.Illness, Day);
         }
 
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            day_form.Text = (++Day).ToString();
+            for (int i = 0; i < Rows; i++)
+            {
+                for (int j = 0; j < Columns; j++)
+                {
+                    UpdatePerson(i, j);
+                }
+            }
+            pictureBox.Invalidate();
+            if (!HasInfected())
+            {
+                timer.Stop();
+                button_pause.Visible = false;
+                button_play.Visible = false;
+                button_step.Visible = false;
+                MessageBox.Show("Симуляция окончена", "Все зараженные выздоровели или умерли", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         private void UpdatePerson(int row, int column)
         {
             Person person = persons[row, column];
             switch (person.State)
             {
                 case "Здоров":
-                    CheckNeighbors(row, column);
+                    //CheckNeighbors(row, column);
                     break;
                 case "Инкубациооный период":
                     Infected incub = (Infected)person;
                     incub.Reduce_Incub();
-                    InfectNeighbors(row, column);
+                    if (incub.Day_of_disease == Day-1) InfectNeighbors(row, column);
                     break;
                 case "Заражён":
                     Infected infected = (Infected)person;
-                    //infected.App_Day_Of_Disease();
                     infected.Reduce_Infection();
-                    InfectNeighbors(row, column);
+                    if (infected.Day_of_disease == Day - 1) InfectNeighbors(row, column);
                     if (infected.Infection_Days == 0)
                     {
                         DecideFate(row, column);
@@ -191,45 +212,6 @@ namespace Practice_2nd_corce
             }
         }
 
-
-        private void Imitation_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (File.Exists("dt.dt"))
-            {
-                File.Delete("dt.dt");
-            }
-            this.Owner.Show();
-        }
-
-        private void button_step_Click(object sender, EventArgs e)
-        {
-            if (!timer.Enabled)
-            {
-                timer_Tick(sender, e);
-            }
-        }
-
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            day_form.Text = (++Day).ToString();
-            for (int i = 0; i < Rows; i++)
-            {
-                for (int j = 0; j < Columns; j++)
-                {
-                    UpdatePerson(i, j);
-                }
-            }
-            pictureBox.Invalidate();
-            if (!HasInfected())
-            {
-                timer.Stop();
-                button_pause.Visible = false;
-                button_play.Visible = false;
-                button_step.Visible = false;
-                MessageBox.Show("Симуляция окончена", "Все зараженные выздоровели или умерли", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
         private bool HasInfected()
         {
             for (int i = 0; i < Rows; i++)
@@ -258,6 +240,23 @@ namespace Practice_2nd_corce
                     g.FillRectangle(brush, j * SquareSize, i * SquareSize, SquareSize, SquareSize);
                     brush.Dispose();
                 }
+            }
+        }
+
+        private void Imitation_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (File.Exists("dt.dt"))
+            {
+                File.Delete("dt.dt");
+            }
+            this.Owner.Show();
+        }
+
+        private void button_step_Click(object sender, EventArgs e)
+        {
+            if (!timer.Enabled)
+            {
+                timer_Tick(sender, e);
             }
         }
 

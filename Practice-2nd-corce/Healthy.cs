@@ -12,7 +12,7 @@ namespace Practice_2nd_corce
 
         public int Immunity { get { return immunity;} set { immunity = value; } }
         
-        public Healthy() 
+        public Healthy()
         {
             this.state = "Здоров";
             this.color = System.Drawing.Color.Silver;

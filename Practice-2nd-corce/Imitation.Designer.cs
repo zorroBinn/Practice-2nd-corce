@@ -220,7 +220,7 @@
             // 
             // timer
             // 
-            this.timer.Interval = 400;
+            this.timer.Interval = 300;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // day_form
