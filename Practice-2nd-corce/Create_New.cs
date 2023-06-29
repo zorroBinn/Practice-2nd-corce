@@ -273,5 +273,20 @@ namespace Practice_2nd_corce
         {
             CheckChar(e);
         }
+
+        private void about_bacteria_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void about_virus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void about_parasite_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

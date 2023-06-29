@@ -8,30 +8,28 @@ namespace Practice_2nd_corce
 {
     internal class Healthy : Person
     {
-        private int immunity;
+        public int Immunity { get; set; }
 
-        public int Immunity { get { return immunity;} set { immunity = value; } }
-        
         public Healthy()
         {
-            this.state = "Здоров";
-            this.color = System.Drawing.Color.Lavender;
-            RandomAge();
-            if (this.age < 25)
+            Age = Randomization.Rand(15, 90);
+            State = "Здоров";
+            Color = System.Drawing.Color.SkyBlue;
+            if (Age < 25)
             {
-                this.immunity = Randomization.Rand(0, 95);
+                Immunity = Randomization.Rand(0, 90);
             }
-            else if (this.age >= 25 && this.age <= 50)
+            else if (Age >= 25 && Age <= 50)
             {
-                this.immunity = Randomization.Rand(0, 70);
+                Immunity = Randomization.Rand(0, 65);
             }
-            else if (this.age >= 50 && this.age <= 70)
+            else if (Age > 50 && Age <= 70)
             {
-                this.immunity = Randomization.Rand(0, 50);
+                Immunity = Randomization.Rand(0, 40);
             }
             else
             {
-                this.immunity = Randomization.Rand(0, 20);
+                Immunity = Randomization.Rand(0, 15);
             }
         }
     }
