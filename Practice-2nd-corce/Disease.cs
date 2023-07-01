@@ -10,24 +10,31 @@ namespace Practice_2nd_corce
 {
     internal class Disease
     {
-        public int Type { get; set; }
-        public string Name { get; set; }
-        public int Infected { get; set; }
-        public int Incub { get; set; }
-        public int Illness { get; set; }
-        public int Death { get; set; }
+        private int type;
+        private string name;
+        private int infected;
+        private int incub;
+        private int illness;
+        private int death;
+
+        public int Type { get { return type; } set { type = value; } }
+        public string Name { get { return name; } set { name = value; } }
+        public int Infected { get { return infected; } set { infected = value; } }
+        public int Incub { get { return incub; } set { incub = value; } }
+        public int Illness { get { return illness; } set { illness = value; } }
+        public int Death { get { return death; } set { death = value; } }
 
         public Disease() 
         {
             try
             {
                 StreamReader file = File.OpenText("dt.dt");
-                Type = int.Parse(file.ReadLine());
-                Name = file.ReadLine();
-                Infected = int.Parse(file.ReadLine());
-                Incub = int.Parse(file.ReadLine());
-                Illness= int.Parse(file.ReadLine());
-                Death = int.Parse(file.ReadLine());
+                this.type = int.Parse(file.ReadLine());
+                this.name = file.ReadLine();
+                this.infected = int.Parse(file.ReadLine());
+                this.incub = int.Parse(file.ReadLine());
+                this.illness= int.Parse(file.ReadLine());
+                this.death = int.Parse(file.ReadLine());
                 file.Close();
             }
             catch (Exception)
@@ -36,37 +43,37 @@ namespace Practice_2nd_corce
             }
         }
 
-        public bool Mutation()
+        public void Mutation()
         {
             int mutation_probability;
-            switch(Type)
+            if (this.type == 0)
             {
-                case 0:
-                    mutation_probability = Randomization.Rand(1, 5);
-                    if (Randomization.Rand(1, 100) <= mutation_probability)
-                    {
-                        if (MutationSet(1, 8, 10)) return true;
-                    }
-                    break; 
-                case 1:
-                    mutation_probability = Randomization.Rand(1, 10);
-                    if (Randomization.Rand(1, 100) <= mutation_probability)
-                    {
-                        if (MutationSet(5, 10, 10)) return true;
-                    }
-                    break;
-                case 2:
-                    mutation_probability = Randomization.Rand(1, 3);
-                    if (Randomization.Rand(1, 100) < mutation_probability)
-                    {
-                        if (MutationSet(1, 10, 3)) return true;
-                    }
-                    break;
+                mutation_probability = Randomization.Rand(1, 4);
+                
+                if (Randomization.Rand(1,100) <= mutation_probability)
+                {
+                    MutationSet(1, 8, 10);
+                }
             }
-            return false;
+            else if (this.type == 1)
+            {
+                mutation_probability = Randomization.Rand(1, 8); 
+                if (Randomization.Rand(1, 100) <= mutation_probability)
+                {
+                    MutationSet(5, 10, 10);
+                }
+            }
+            else
+            {
+                mutation_probability = Randomization.Rand(1, 2); 
+                if (Randomization.Rand(1, 100) < mutation_probability)
+                {
+                    MutationSet(1, 3, 3);
+                }
+            }
         }
 
-        private bool MutationSet(int min, int max, int min_infected)
+        private void MutationSet(int min, int max, int min_infected)
         {
             int mutation_type = Randomization.Rand(1, 3);
             int mutation_updown = Randomization.Rand(1, 2);
@@ -74,15 +81,13 @@ namespace Practice_2nd_corce
             {
                 case 1:
                     {
-                        if (mutation_updown == 1 && Infected < 90)
+                        if (mutation_updown == 1 && this.infected < 90)
                         {
-                            Infected += Randomization.Rand(min, max);
-                            return true;
+                            this.infected += Randomization.Rand(min, max);
                         }
-                        else if (mutation_updown == 2 && Infected > min_infected && Type != 2)
+                        else if (mutation_updown == 2 && this.infected > min_infected)
                         {
-                            Infected -= Randomization.Rand(min, max);
-                            return true;
+                            this.infected -= Randomization.Rand(min, max);
                         }
                         break;
                     }
@@ -90,32 +95,28 @@ namespace Practice_2nd_corce
                     {
                         if (mutation_updown == 1)
                         {
-                            Illness += Randomization.Rand(1, 5);
-                            return true;
+                            this.illness += Randomization.Rand(1, 5);
                         }
-                        else if (mutation_updown == 2 && Illness > 5)
+                        else if (mutation_updown == 2 && this.illness > 5)
                         {
-                            Illness -= Randomization.Rand(1, 4);
-                            return true;
+                            this.illness -= Randomization.Rand(1, 4);
                         }
                         break;
                     }
                 case 3:
                     {
-                        if (mutation_updown == 1 && Death < 90)
+                        if (mutation_updown == 1 && this.death < 90)
                         {
-                            Death += Randomization.Rand(min, max);
-                            return true;
+                            this.death += Randomization.Rand(min, max);
                         }
-                        else if (mutation_updown == 2)
+                        else if (mutation_updown == 2 && this.death > 10)
                         {
-                            Death -= Randomization.Rand(min, max);
-                            return true;
+                            this.death -= Randomization.Rand(min, max);
                         }
                         break;
                     }
             }
-            return false;
         }
+
     }
 }

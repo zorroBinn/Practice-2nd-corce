@@ -4,11 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
 using System.Drawing;
-using System.Drawing.Text;
 using System.IO;
 using System.Linq;
-using System.Reflection.Emit;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,14 +26,14 @@ namespace Practice_2nd_corce
             disease = new Disease();
             Day = 0;
             day_form.Text = Day.ToString();
-            DiseaseInfoUpdate();
+            Disease_Info_Update();
             persons = new Person[Rows, Columns];
             FillPerson();
             InfectRandomPerson();
-            NumberInfoUpdate();
+
         }
 
-        private void DiseaseInfoUpdate()
+        private void Disease_Info_Update()
         {
             switch(disease.Type)
             {
@@ -102,7 +99,7 @@ namespace Practice_2nd_corce
         {
             int row = Randomization.Rand(0, Rows - 1);
             int column = Randomization.Rand(0, Columns - 1);
-            persons[row, column] = new Infected(disease.Incub, disease.Illness, Day, persons[row, column].Age);
+            persons[row, column] = new Infected(disease.Incub, disease.Illness, Day);
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -115,39 +112,7 @@ namespace Practice_2nd_corce
                     UpdatePerson(i, j);
                 }
             }
-            if (disease.Mutation())
-            {
-                string text = "";
-                if (disease.Infected > Int32.Parse(infection.Text))
-                {
-                    text = "Вероятность передачи +" + (disease.Infected - Int32.Parse(infection.Text));
-                }
-                else if (disease.Infected < Int32.Parse(infection.Text))
-                {
-                    text = "Вероятность передачи -" + (Int32.Parse(infection.Text) - disease.Infected);
-                }
-                else if (disease.Illness > Int32.Parse(illness.Text))
-                {
-                    text = "Период болезни +" + (disease.Illness - Int32.Parse(illness.Text));
-                }
-                else if (disease.Illness < Int32.Parse(illness.Text))
-                {
-                    text = "Период болезни -" + (Int32.Parse(illness.Text) - disease.Illness);
-                }
-                else if (disease.Death > Int32.Parse(death.Text))
-                {
-                    text = "Летальность +" + (disease.Death - Int32.Parse(death.Text));
-                }
-                else if (disease.Death < Int32.Parse(death.Text))
-                {
-                    text = "Летальность -" + (Int32.Parse(death.Text) - disease.Death);
-                }
-                new_mutation.Text = text;
-                ShowMutationInfo();
-                DiseaseInfoUpdate();
-            }
             pictureBox.Invalidate();
-            NumberInfoUpdate();
             if (!HasInfected())
             {
                 timer.Stop();
@@ -159,78 +124,24 @@ namespace Practice_2nd_corce
             }
         }
 
-        private void NumberInfoUpdate()
-        {
-            int health = 0;
-            int incub = 0;
-            int illness = 0;
-            int recover = 0;
-            int dead = 0;
-            for (int i = 0; i < Rows; i++)
-            {
-                for (int j = 0; j < Columns; j++)
-                {
-                    Person person = persons[i, j];
-                    if (person.State == "Здоров")
-                    {
-                        health++;
-                        if (Day % 365 == 0)
-                        {
-                            person.Age++;
-                        }
-                    }
-                    else if (person.State == "Инкубационный период")
-                    {
-                        incub++;
-                        if (Day % 365 == 0)
-                        {
-                            person.Age++;
-                        }
-                    }
-                    else if (person.State == "Заражён")
-                    {
-                        illness++;
-                        if (Day % 365 == 0)
-                        {
-                            person.Age++;
-                        }
-                    }
-                    else if (person.State == "Исцелён")
-                    {
-                        recover++;
-                        if (Day % 365 == 0)
-                        {
-                            person.Age++;
-                        }
-                    }
-                    else if (person.State == "Мёртв")
-                    {
-                        dead++;
-                    }
-                }
-            }
-            number_of_healthy.Text = health.ToString();
-            number_of_incub.Text = incub.ToString();
-            number_of_illness.Text = illness.ToString();
-            number_of_recovery.Text = recover.ToString();
-            number_of_dead.Text = dead.ToString();
-        }
-
         private void UpdatePerson(int row, int column)
         {
             Person person = persons[row, column];
             switch (person.State)
             {
-                case "Инкубационный период":
+                case "Здоров":
+                    //CheckNeighbors(row, column);
+                    break;
+                case "Инкубациооный период":
                     Infected incub = (Infected)person;
-                    incub.ReduceIncub();
-                    if (incub.DayOfDisease == Day-1) InfectNeighbors(row, column);
+                    incub.Reduce_Incub();
+                    if (incub.Day_of_disease == Day-1) InfectNeighbors(row, column);
                     break;
                 case "Заражён":
                     Infected infected = (Infected)person;
-                    infected.ReduceInfection();
-                    if (infected.DayOfDisease == Day - 1) InfectNeighbors(row, column);
-                    if (infected.InfectionDays == 0)
+                    infected.Reduce_Infection();
+                    if (infected.Day_of_disease == Day - 1) InfectNeighbors(row, column);
+                    if (infected.Infection_Days == 0)
                     {
                         DecideFate(row, column);
                     }
@@ -238,32 +149,33 @@ namespace Practice_2nd_corce
             }
         }
 
-        //private void CheckNeighbors(int row, int column)
-        //{
-        //    Healthy healthy = (Healthy)persons[row, column];
-        //    for (int i = -1; i <= 1; i++)
-        //    {
-        //        for (int j = -1; j <= 1; j++)
-        //        {
-        //            if ((i == 0 && j == 0) || (i != 0 && j != 0))
-        //                continue;
-        //            if (row + i < 0 || row + i >= Rows || column + j < 0 || column + j >= Columns)
-        //                continue;
-        //            Person neighbor = persons[row + i, column + j];
-        //            if (neighbor.State == "Инкубационный период" || neighbor.State == "Заражён")
-        //            {
-        //                if (disease.Infected - healthy.Immunity > 0)
-        //                {
-        //                    persons[row, column] = new Infected(disease.Incub, disease.Illness, Day);
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
+        private void CheckNeighbors(int row, int column)
+        {
+            Healthy healthy = (Healthy)persons[row, column];
+            for (int i = -1; i <= 1; i++)
+            {
+                for (int j = -1; j <= 1; j++)
+                {
+                    if ((i == 0 && j == 0) || (i != 0 && j != 0))
+                        continue;
+                    if (row + i < 0 || row + i >= Rows || column + j < 0 || column + j >= Columns)
+                        continue;
+                    Person neighbor = persons[row + i, column + j];
+                    if (neighbor.State == "Инкубациооный период" || neighbor.State == "Заражён")
+                    {
+                        if (disease.Infected - healthy.Immunity > 0)
+                        {
+                            persons[row, column] = new Infected(disease.Incub, disease.Illness, Day);
+                        }
+                    }
+                }
+            }
+        }
 
         // Метод для проверки соседей человека на наличие здоровых
         private void InfectNeighbors(int row, int column)
         {
+            Infected infected = (Infected)persons[row, column];
             for (int i = -1; i <= 1; i++)
             {
                 for (int j = -1; j <= 1; j++)
@@ -277,7 +189,7 @@ namespace Practice_2nd_corce
                     {
                         if (disease.Infected - ((Healthy)neighbor).Immunity > 0)
                         {
-                            persons[row + i, column + j] = new Infected(disease.Incub, disease.Illness, Day, neighbor.Age);
+                            persons[row + i, column + j] = new Infected(disease.Incub, disease.Illness, Day);
                         }
                     }
                 }
@@ -287,15 +199,15 @@ namespace Practice_2nd_corce
         // Метод для определения судьбы человека после болезни
         private void DecideFate(int row, int column)
         {
-            Person person = persons[row, column];
+            Infected infected = (Infected)persons[row, column];
             int random = Randomization.Rand(1, 100);
             if (random <= disease.Death)
             {
-                persons[row, column] = new Dead(Day, person.Age);
+                persons[row, column] = new Dead(Day);
             }
             else
             {
-                persons[row, column] = new Recovered(Day, person.Age);
+                persons[row, column] = new Recovered(Day);
             }
         }
 
@@ -306,38 +218,13 @@ namespace Practice_2nd_corce
                 for (int j = 0; j < Columns; j++)
                 {
                     Person person = persons[i, j];
-                    if (person.State == "Инкубационный период" || person.State == "Заражён")
+                    if (person.State == "Инкубациооный период" || person.State == "Заражён")
                     {
                         return true;
                     }
                 }
             }
             return false;
-        }
-
-        private bool HasHealthy()
-        {
-            for (int i = 0; i < Rows; i++)
-            {
-                for (int j = 0; j < Columns; j++)
-                {
-                    Person person = persons[i, j];
-                    if (person.State != "Здоров")
-                    {
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-
-        private async Task ShowMutationInfo()
-        {
-            new_mutation.Visible = true;
-            new_mutation_label.Visible = true;
-            await Task.Delay(1900);
-            new_mutation_label.Visible = false;
-            new_mutation.Visible = false;
         }
 
         private void pictureBox_Paint(object sender, PaintEventArgs e)
@@ -418,95 +305,6 @@ namespace Practice_2nd_corce
             {
                 timer.Interval = 100;
             }
-        }
-
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton4.Checked)
-            {
-                timer.Interval = 40;
-            }
-        }
-
-        private async void pictureBox_MouseClick(object sender, MouseEventArgs e)
-        {
-            int x = e.X;
-            int y = e.Y;
-            int row = y / SquareSize;
-            int column = x / SquareSize;
-            if (row >= 0 && row < Rows && column >= 0 && column < Columns)
-            {
-                string text = "";
-                Person person = persons[row, column];
-                ToolTip tt = new ToolTip();
-                //tt.IsBalloon = true;
-                tt.AutoPopDelay = 2000;
-                if (person.State == "Здоров")
-                {
-                    Healthy health = (Healthy)persons[row, column];
-                    text = "Статус: " + health.State + "\nВозраст: " + health.Age + "\nИммунитет: " + health.Immunity + "%";
-                    text += "\nДважды нажмите, чтобы заразить...";
-                }
-                else if (person.State == "Инкубационный период" || person.State == "Заражён")
-                {
-                    Infected infect = (Infected)persons[row, column];
-                    text = "Статус: " + infect.State + "\nВозраст: " + infect.Age + "\nДень заражения: " + infect.DayOfDisease;
-                }
-                else if (person.State == "Мёртв")
-                {
-                    Dead dead = (Dead)persons[row, column];
-                    text = "Статус: " + dead.State + "\nВозраст: " + dead.Age + "\nДень смерти: " + dead.DeadDay;
-                }
-                else
-                {
-                    Recovered recover = (Recovered)persons[row, column];
-                    text = "Статус: " + recover.State + "\nВозраст: " + recover.Age + "\nДень выздоровления: " + recover.DayOfRecovery;
-                    text += "\nДважды нажмите, чтобы заразить...";
-                }
-                tt.Show(text, pictureBox, x, y);
-                await Task.Delay(1300);
-                tt.Hide(pictureBox);
-            }
-        }
-
-        private void pictureBox_Healthy_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip t = new ToolTip();
-            t.SetToolTip(pictureBox_Healthy, "Здоров");
-            t.AutomaticDelay = 120;
-            t.IsBalloon = true;
-        }
-
-        private void pictureBox_Incub_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip t = new ToolTip();
-            t.SetToolTip(pictureBox_Incub, "Инкубационный период");
-            t.AutomaticDelay = 120;
-            t.IsBalloon = true;
-        }
-
-        private void pictureBox_Illness_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip t = new ToolTip();
-            t.SetToolTip(pictureBox_Illness, "Заражён");
-            t.AutomaticDelay = 120;
-            t.IsBalloon = true;
-        }
-
-        private void pictureBox_Recovered_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip t = new ToolTip();
-            t.SetToolTip(pictureBox_Recovered, "Исцелён");
-            t.AutomaticDelay = 120;
-            t.IsBalloon = true;
-        }
-
-        private void pictureBox_Dead_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip t = new ToolTip();
-            t.SetToolTip(pictureBox_Dead, "Мёртв");
-            t.AutomaticDelay = 120;
-            t.IsBalloon = true;
         }
     }
 }

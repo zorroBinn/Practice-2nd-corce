@@ -95,9 +95,6 @@
             this.about_bacteria_label = new System.Windows.Forms.Label();
             this.create_tabs = new System.Windows.Forms.TabControl();
             this.Create_Button = new yt_DesignUI.yt_Button();
-            this.about_virus = new yt_DesignUI.yt_Button();
-            this.about_parasite = new yt_DesignUI.yt_Button();
-            this.about_bacteria = new yt_DesignUI.yt_Button();
             this.image_tab.SuspendLayout();
             this.image_bacteria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bacteria)).BeginInit();
@@ -130,9 +127,9 @@
             this.label_create.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label_create.Location = new System.Drawing.Point(78, 71);
             this.label_create.Name = "label_create";
-            this.label_create.Size = new System.Drawing.Size(801, 43);
+            this.label_create.Size = new System.Drawing.Size(482, 43);
             this.label_create.TabIndex = 0;
-            this.label_create.Text = "Создайте внутриклеточный микроорганизм:";
+            this.label_create.Text = "Создайте микроорганизм:";
             // 
             // image_tab
             // 
@@ -214,7 +211,6 @@
             // create_prion
             // 
             this.create_prion.BackColor = System.Drawing.Color.Lavender;
-            this.create_prion.Controls.Add(this.about_parasite);
             this.create_prion.Controls.Add(this.comboBox_prion_name);
             this.create_prion.Controls.Add(this.prion_name);
             this.create_prion.Controls.Add(this.label19);
@@ -236,17 +232,17 @@
             this.create_prion.Padding = new System.Windows.Forms.Padding(3);
             this.create_prion.Size = new System.Drawing.Size(789, 492);
             this.create_prion.TabIndex = 2;
-            this.create_prion.Text = "Паразит";
+            this.create_prion.Text = "Прион";
             // 
             // comboBox_prion_name
             // 
             this.comboBox_prion_name.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_prion_name.FormattingEnabled = true;
             this.comboBox_prion_name.Items.AddRange(new object[] {
-            "Малярия",
-            "Изоспороз",
-            "Токсоплазмоз",
-            "Лейшманиоз"});
+            "Прион Крейтцфельдта-Якоба",
+            "Куру",
+            "Прион GSS",
+            "Прион FFI"});
             this.comboBox_prion_name.Location = new System.Drawing.Point(277, 333);
             this.comboBox_prion_name.MaxLength = 30;
             this.comboBox_prion_name.Name = "comboBox_prion_name";
@@ -360,14 +356,14 @@
             // 
             this.trackBar_prion_illness.LargeChange = 1;
             this.trackBar_prion_illness.Location = new System.Drawing.Point(277, 166);
-            this.trackBar_prion_illness.Maximum = 999;
-            this.trackBar_prion_illness.Minimum = 1;
+            this.trackBar_prion_illness.Maximum = 800;
+            this.trackBar_prion_illness.Minimum = 100;
             this.trackBar_prion_illness.Name = "trackBar_prion_illness";
             this.trackBar_prion_illness.Size = new System.Drawing.Size(340, 45);
             this.trackBar_prion_illness.TabIndex = 16;
             this.trackBar_prion_illness.TabStop = false;
             this.trackBar_prion_illness.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trackBar_prion_illness.Value = 1;
+            this.trackBar_prion_illness.Value = 100;
             this.trackBar_prion_illness.Scroll += new System.EventHandler(this.trackBar_prion_illness_Scroll);
             // 
             // trackBar_prion_death
@@ -375,20 +371,19 @@
             this.trackBar_prion_death.LargeChange = 1;
             this.trackBar_prion_death.Location = new System.Drawing.Point(277, 248);
             this.trackBar_prion_death.Maximum = 100;
-            this.trackBar_prion_death.Minimum = 1;
+            this.trackBar_prion_death.Minimum = 70;
             this.trackBar_prion_death.Name = "trackBar_prion_death";
             this.trackBar_prion_death.Size = new System.Drawing.Size(340, 45);
             this.trackBar_prion_death.TabIndex = 14;
             this.trackBar_prion_death.TabStop = false;
             this.trackBar_prion_death.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trackBar_prion_death.Value = 1;
+            this.trackBar_prion_death.Value = 70;
             this.trackBar_prion_death.Scroll += new System.EventHandler(this.trackBar_prion_death_Scroll);
             // 
             // trackBar_prion_infection
             // 
             this.trackBar_prion_infection.LargeChange = 1;
             this.trackBar_prion_infection.Location = new System.Drawing.Point(277, 92);
-            this.trackBar_prion_infection.Maximum = 100;
             this.trackBar_prion_infection.Minimum = 1;
             this.trackBar_prion_infection.Name = "trackBar_prion_infection";
             this.trackBar_prion_infection.Size = new System.Drawing.Size(340, 45);
@@ -405,14 +400,15 @@
             this.about_prion_label.ForeColor = System.Drawing.Color.DarkBlue;
             this.about_prion_label.Location = new System.Drawing.Point(23, 13);
             this.about_prion_label.Name = "about_prion_label";
-            this.about_prion_label.Size = new System.Drawing.Size(103, 23);
+            this.about_prion_label.Size = new System.Drawing.Size(725, 69);
             this.about_prion_label.TabIndex = 0;
-            this.about_prion_label.Text = "Паразит - \r\n";
+            this.about_prion_label.Text = "Прион - очень сложный и медленно развивающийся патоген в головном мозге\r\nНе имеет" +
+    " инкубационного периода, чрезвычайно смертелен\r\nИмеет очень маленькую вероятност" +
+    "ь мутации и распространения\r\n";
             // 
             // create_virus
             // 
             this.create_virus.BackColor = System.Drawing.Color.MistyRose;
-            this.create_virus.Controls.Add(this.about_virus);
             this.create_virus.Controls.Add(this.comboBox_virus_name);
             this.create_virus.Controls.Add(this.virus_name);
             this.create_virus.Controls.Add(this.label18);
@@ -587,15 +583,15 @@
             this.virus_infection.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.virus_infection.Location = new System.Drawing.Point(632, 92);
             this.virus_infection.Name = "virus_infection";
-            this.virus_infection.Size = new System.Drawing.Size(26, 29);
+            this.virus_infection.Size = new System.Drawing.Size(39, 29);
             this.virus_infection.TabIndex = 17;
-            this.virus_infection.Text = "1";
+            this.virus_infection.Text = "10";
             // 
             // trackBar_virus_illness
             // 
             this.trackBar_virus_illness.LargeChange = 1;
             this.trackBar_virus_illness.Location = new System.Drawing.Point(277, 236);
-            this.trackBar_virus_illness.Maximum = 99;
+            this.trackBar_virus_illness.Maximum = 30;
             this.trackBar_virus_illness.Minimum = 1;
             this.trackBar_virus_illness.Name = "trackBar_virus_illness";
             this.trackBar_virus_illness.Size = new System.Drawing.Size(340, 45);
@@ -638,13 +634,13 @@
             this.trackBar_virus_infection.LargeChange = 1;
             this.trackBar_virus_infection.Location = new System.Drawing.Point(277, 92);
             this.trackBar_virus_infection.Maximum = 100;
-            this.trackBar_virus_infection.Minimum = 1;
+            this.trackBar_virus_infection.Minimum = 10;
             this.trackBar_virus_infection.Name = "trackBar_virus_infection";
             this.trackBar_virus_infection.Size = new System.Drawing.Size(340, 45);
             this.trackBar_virus_infection.TabIndex = 13;
             this.trackBar_virus_infection.TabStop = false;
             this.trackBar_virus_infection.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trackBar_virus_infection.Value = 1;
+            this.trackBar_virus_infection.Value = 10;
             this.trackBar_virus_infection.Scroll += new System.EventHandler(this.trackBar_virus_infection_Scroll);
             // 
             // about_virus_label
@@ -662,7 +658,6 @@
             // create_bacteria
             // 
             this.create_bacteria.BackColor = System.Drawing.Color.Honeydew;
-            this.create_bacteria.Controls.Add(this.about_bacteria);
             this.create_bacteria.Controls.Add(this.comboBox_bacteria_name);
             this.create_bacteria.Controls.Add(this.bacteria_name);
             this.create_bacteria.Controls.Add(this.label10);
@@ -845,7 +840,7 @@
             // 
             this.trackBar_bacteria_illness.LargeChange = 1;
             this.trackBar_bacteria_illness.Location = new System.Drawing.Point(277, 235);
-            this.trackBar_bacteria_illness.Maximum = 99;
+            this.trackBar_bacteria_illness.Maximum = 20;
             this.trackBar_bacteria_illness.Minimum = 1;
             this.trackBar_bacteria_illness.Name = "trackBar_bacteria_illness";
             this.trackBar_bacteria_illness.Size = new System.Drawing.Size(340, 45);
@@ -953,87 +948,6 @@
             this.Create_Button.UseZoomEffectOnHover = false;
             this.Create_Button.Visible = false;
             this.Create_Button.Click += new System.EventHandler(this.Create_Button_Click);
-            // 
-            // about_virus
-            // 
-            this.about_virus.BackColor = System.Drawing.Color.Salmon;
-            this.about_virus.BackColorAdditional = System.Drawing.Color.Brown;
-            this.about_virus.BackColorGradientEnabled = true;
-            this.about_virus.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.about_virus.BorderColor = System.Drawing.Color.Tomato;
-            this.about_virus.BorderColorEnabled = false;
-            this.about_virus.BorderColorOnHover = System.Drawing.Color.Tomato;
-            this.about_virus.BorderColorOnHoverEnabled = false;
-            this.about_virus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.about_virus.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.about_virus.ForeColor = System.Drawing.Color.White;
-            this.about_virus.Location = new System.Drawing.Point(733, 8);
-            this.about_virus.Name = "about_virus";
-            this.about_virus.RippleColor = System.Drawing.Color.Black;
-            this.about_virus.RoundingEnable = true;
-            this.about_virus.Size = new System.Drawing.Size(50, 35);
-            this.about_virus.TabIndex = 31;
-            this.about_virus.Text = "?";
-            this.about_virus.TextHover = null;
-            this.about_virus.UseDownPressEffectOnClick = true;
-            this.about_virus.UseRippleEffect = false;
-            this.about_virus.UseVisualStyleBackColor = false;
-            this.about_virus.UseZoomEffectOnHover = false;
-            this.about_virus.Click += new System.EventHandler(this.about_virus_Click);
-            // 
-            // about_parasite
-            // 
-            this.about_parasite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.about_parasite.BackColorAdditional = System.Drawing.Color.Navy;
-            this.about_parasite.BackColorGradientEnabled = true;
-            this.about_parasite.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.about_parasite.BorderColor = System.Drawing.Color.Tomato;
-            this.about_parasite.BorderColorEnabled = false;
-            this.about_parasite.BorderColorOnHover = System.Drawing.Color.Tomato;
-            this.about_parasite.BorderColorOnHoverEnabled = false;
-            this.about_parasite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.about_parasite.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.about_parasite.ForeColor = System.Drawing.Color.White;
-            this.about_parasite.Location = new System.Drawing.Point(733, 6);
-            this.about_parasite.Name = "about_parasite";
-            this.about_parasite.RippleColor = System.Drawing.Color.Black;
-            this.about_parasite.RoundingEnable = true;
-            this.about_parasite.Size = new System.Drawing.Size(50, 35);
-            this.about_parasite.TabIndex = 32;
-            this.about_parasite.Text = "?";
-            this.about_parasite.TextHover = null;
-            this.about_parasite.UseDownPressEffectOnClick = true;
-            this.about_parasite.UseRippleEffect = false;
-            this.about_parasite.UseVisualStyleBackColor = false;
-            this.about_parasite.UseZoomEffectOnHover = false;
-            this.about_parasite.Click += new System.EventHandler(this.about_parasite_Click);
-            // 
-            // about_bacteria
-            // 
-            this.about_bacteria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.about_bacteria.BackColorAdditional = System.Drawing.Color.Green;
-            this.about_bacteria.BackColorGradientEnabled = true;
-            this.about_bacteria.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.about_bacteria.BorderColor = System.Drawing.Color.Tomato;
-            this.about_bacteria.BorderColorEnabled = false;
-            this.about_bacteria.BorderColorOnHover = System.Drawing.Color.Tomato;
-            this.about_bacteria.BorderColorOnHoverEnabled = false;
-            this.about_bacteria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.about_bacteria.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.about_bacteria.ForeColor = System.Drawing.Color.White;
-            this.about_bacteria.Location = new System.Drawing.Point(733, 8);
-            this.about_bacteria.Name = "about_bacteria";
-            this.about_bacteria.RippleColor = System.Drawing.Color.Black;
-            this.about_bacteria.RoundingEnable = true;
-            this.about_bacteria.Size = new System.Drawing.Size(50, 35);
-            this.about_bacteria.TabIndex = 32;
-            this.about_bacteria.Text = "?";
-            this.about_bacteria.TextHover = null;
-            this.about_bacteria.UseDownPressEffectOnClick = true;
-            this.about_bacteria.UseRippleEffect = false;
-            this.about_bacteria.UseVisualStyleBackColor = false;
-            this.about_bacteria.UseZoomEffectOnHover = false;
-            this.about_bacteria.Click += new System.EventHandler(this.about_bacteria_Click);
             // 
             // Create_New
             // 
@@ -1152,8 +1066,5 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private yt_DesignUI.yt_Button about_virus;
-        private yt_DesignUI.yt_Button about_parasite;
-        private yt_DesignUI.yt_Button about_bacteria;
     }
 }

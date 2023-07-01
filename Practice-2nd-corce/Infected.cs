@@ -8,41 +8,50 @@ namespace Practice_2nd_corce
 {
     internal class Infected : Person
     {
-        public int IncubDays { get; set; }
-        public int InfectionDays { get; set; }
-        public int DayOfDisease { get; set; }
+        private int incub_days;
+        private int infection_days;
+        private int day_of_disease;
 
-        public Infected(int incub, int infection, int day_of_disease, int age)
+        public int Incub_Days { get { return incub_days; } set { incub_days = value; } }
+        public int Infection_Days { get { return infection_days; } set { infection_days = value; } }
+
+        public int Day_of_disease { get { return day_of_disease; } set { day_of_disease = value;} }
+
+        public Infected(int incub, int infection, int day_of_disease)
         {
-            IncubDays = incub;
-            InfectionDays = infection;
-            DayOfDisease = day_of_disease;
-            Age = age;
-            if (IncubDays > 0)
+            this.incub_days = incub;
+            this.infection_days = infection;
+            this.day_of_disease = day_of_disease;
+            if (incub_days > 0)
             {
-                State = "Инкубационный период";
-                Color = System.Drawing.Color.Salmon;
+                this.state = "Инкубациооный период";
+                this.color = System.Drawing.Color.Salmon;
             }
             else 
             {
-                State = "Заражён";
-                Color = System.Drawing.Color.Brown;
+                this.state = "Заражён";
+                this.color = System.Drawing.Color.Brown;
             }
         }
 
-        public void ReduceIncub()
+        public void Reduce_Incub()
         {
-            IncubDays -= 1;
-            if (IncubDays == 0)
+            this.incub_days -= 1;
+            if (this.incub_days == 0)
             {
-                State = "Заражён";
-                Color = System.Drawing.Color.Brown;
+                this.state = "Заражён";
+                this.color = System.Drawing.Color.Brown;
             }
         }
 
-        public void ReduceInfection() 
+        public void Reduce_Infection() 
         { 
-            InfectionDays -= 1;
+            this.infection_days -= 1;
         }
+        
+        /*public void App_Day_Of_Disease()
+        {
+            this.day_of_disease += 1;
+        }*/
     }
 }

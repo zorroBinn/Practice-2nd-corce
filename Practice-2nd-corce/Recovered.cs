@@ -8,14 +8,15 @@ namespace Practice_2nd_corce
 {
     internal class Recovered : Person
     {
-        public int DayOfRecovery { get; set; }
+        private int day_of_recovery;
 
-        public Recovered(int day, int age) 
+        public int Day_Of_Recovery { get { return day_of_recovery; } set { day_of_recovery = value; } }
+
+        public Recovered(int day) 
         {
-            DayOfRecovery = day;
-            Age = age;
-            State = "Исцелён";
-            Color = System.Drawing.Color.LightGreen;
+            this.day_of_recovery = day;
+            this.state = "Исцелён";
+            this.color = System.Drawing.Color.LightGreen;
         }
     }
 }

@@ -8,14 +8,15 @@ namespace Practice_2nd_corce
 {
     internal class Dead : Person
     {
-        public int DeadDay { get; set; }
+        private int dead_day;
 
-        public Dead(int day, int age)
+        public int Dead_Day { get { return dead_day; } set { dead_day = value; } }
+
+        public Dead(int dead_day)
         {
-            Age = age;
-            DeadDay = day;
-            State = "Мёртв";
-            Color = System.Drawing.Color.Black;
+            this.dead_day = dead_day;
+            this.state = "Мёртв";
+            this.color = System.Drawing.Color.Black;
         }
     }
 }
