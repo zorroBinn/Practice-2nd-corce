@@ -271,10 +271,10 @@
             this.comboBox_prion_name.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_prion_name.FormattingEnabled = true;
             this.comboBox_prion_name.Items.AddRange(new object[] {
-            "Малярия",
-            "Изоспороз",
-            "Токсоплазмоз",
-            "Лейшманиоз"});
+            "Прион Крейтцфельдта — Якоба",
+            "Куру",
+            "Прион FFI",
+            "Прион GSS"});
             this.comboBox_prion_name.Location = new System.Drawing.Point(277, 333);
             this.comboBox_prion_name.MaxLength = 30;
             this.comboBox_prion_name.Name = "comboBox_prion_name";

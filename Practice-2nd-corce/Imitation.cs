@@ -19,9 +19,9 @@ namespace Practice_2nd_corce
     {
         private Disease disease;
         private Person[,] persons;
-        private const int Rows = 40;
-        private const int Columns = 50;
-        private const int SquareSize = 20;
+        private const int Rows = 55;
+        private const int Columns = 70;
+        private const int SquareSize = 15;
         private int Day;
         public Imitation()
         {
@@ -449,7 +449,7 @@ namespace Practice_2nd_corce
                 {
                     Healthy health = (Healthy)persons[row, column];
                     text = "Статус: " + health.State + "\nВозраст: " + health.Age + "\nИммунитет: " + health.Immunity + "%";
-                    text += "\nДважды нажмите, чтобы заразить...";
+                    if(button_pause.Visible) text += "\nДважды нажмите, чтобы заразить...";
                 }
                 else if (person.State == "Инкубационный период" || person.State == "Заражён")
                 {
@@ -465,7 +465,7 @@ namespace Practice_2nd_corce
                 {
                     Recovered recover = (Recovered)persons[row, column];
                     text = "Статус: " + recover.State + "\nВозраст: " + recover.Age + "\nДень выздоровления: " + recover.DayOfRecovery;
-                    text += "\nДважды нажмите, чтобы заразить...";
+                    if(button_pause.Visible) text += "\nДважды нажмите, чтобы заразить...";
                 }
                 tt.Show(text, pictureBox, x, y);
                 await Task.Delay(1300);

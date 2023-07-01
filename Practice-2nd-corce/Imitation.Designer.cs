@@ -80,9 +80,9 @@
             // pictureBox
             // 
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Location = new System.Drawing.Point(20, 1);
+            this.pictureBox.Location = new System.Drawing.Point(3, 1);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(1000, 800);
+            this.pictureBox.Size = new System.Drawing.Size(1050, 825);
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             this.pictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox_Paint);
@@ -93,7 +93,7 @@
             this.label_type.AutoSize = true;
             this.label_type.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_type.ForeColor = System.Drawing.Color.Navy;
-            this.label_type.Location = new System.Drawing.Point(1283, 257);
+            this.label_type.Location = new System.Drawing.Point(1059, 315);
             this.label_type.Name = "label_type";
             this.label_type.Size = new System.Drawing.Size(63, 28);
             this.label_type.TabIndex = 5;
@@ -104,7 +104,7 @@
             this.label_name.AutoSize = true;
             this.label_name.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_name.ForeColor = System.Drawing.Color.Navy;
-            this.label_name.Location = new System.Drawing.Point(1219, 285);
+            this.label_name.Location = new System.Drawing.Point(1220, 253);
             this.label_name.Name = "label_name";
             this.label_name.Size = new System.Drawing.Size(194, 28);
             this.label_name.TabIndex = 6;
@@ -115,7 +115,7 @@
             this.label_infection.AutoSize = true;
             this.label_infection.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_infection.ForeColor = System.Drawing.Color.Navy;
-            this.label_infection.Location = new System.Drawing.Point(1147, 349);
+            this.label_infection.Location = new System.Drawing.Point(1059, 349);
             this.label_infection.Name = "label_infection";
             this.label_infection.Size = new System.Drawing.Size(308, 28);
             this.label_infection.TabIndex = 7;
@@ -126,7 +126,7 @@
             this.label_incub.AutoSize = true;
             this.label_incub.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_incub.ForeColor = System.Drawing.Color.Navy;
-            this.label_incub.Location = new System.Drawing.Point(1101, 389);
+            this.label_incub.Location = new System.Drawing.Point(1059, 389);
             this.label_incub.Name = "label_incub";
             this.label_incub.Size = new System.Drawing.Size(386, 28);
             this.label_incub.TabIndex = 8;
@@ -137,7 +137,7 @@
             this.label_illness.AutoSize = true;
             this.label_illness.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_illness.ForeColor = System.Drawing.Color.Navy;
-            this.label_illness.Location = new System.Drawing.Point(1147, 426);
+            this.label_illness.Location = new System.Drawing.Point(1059, 426);
             this.label_illness.Name = "label_illness";
             this.label_illness.Size = new System.Drawing.Size(292, 28);
             this.label_illness.TabIndex = 9;
@@ -148,7 +148,7 @@
             this.label_death.AutoSize = true;
             this.label_death.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_death.ForeColor = System.Drawing.Color.Navy;
-            this.label_death.Location = new System.Drawing.Point(1181, 463);
+            this.label_death.Location = new System.Drawing.Point(1059, 461);
             this.label_death.Name = "label_death";
             this.label_death.Size = new System.Drawing.Size(189, 28);
             this.label_death.TabIndex = 10;
@@ -158,7 +158,7 @@
             // 
             this.type.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.type.ForeColor = System.Drawing.Color.Green;
-            this.type.Location = new System.Drawing.Point(1342, 255);
+            this.type.Location = new System.Drawing.Point(1415, 313);
             this.type.Name = "type";
             this.type.Size = new System.Drawing.Size(157, 32);
             this.type.TabIndex = 11;
@@ -169,7 +169,7 @@
             // 
             this.name.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.name.ForeColor = System.Drawing.Color.Green;
-            this.name.Location = new System.Drawing.Point(1067, 313);
+            this.name.Location = new System.Drawing.Point(1068, 281);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(494, 32);
             this.name.TabIndex = 12;
@@ -180,7 +180,7 @@
             // 
             this.infection.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.infection.ForeColor = System.Drawing.Color.Green;
-            this.infection.Location = new System.Drawing.Point(1448, 345);
+            this.infection.Location = new System.Drawing.Point(1466, 347);
             this.infection.Name = "infection";
             this.infection.Size = new System.Drawing.Size(64, 32);
             this.infection.TabIndex = 13;
@@ -191,7 +191,7 @@
             // 
             this.percent_infection.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.percent_infection.ForeColor = System.Drawing.Color.Green;
-            this.percent_infection.Location = new System.Drawing.Point(1504, 345);
+            this.percent_infection.Location = new System.Drawing.Point(1528, 347);
             this.percent_infection.Name = "percent_infection";
             this.percent_infection.Size = new System.Drawing.Size(44, 32);
             this.percent_infection.TabIndex = 14;
@@ -202,7 +202,7 @@
             // 
             this.incub.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.incub.ForeColor = System.Drawing.Color.Green;
-            this.incub.Location = new System.Drawing.Point(1484, 387);
+            this.incub.Location = new System.Drawing.Point(1466, 387);
             this.incub.Name = "incub";
             this.incub.Size = new System.Drawing.Size(64, 32);
             this.incub.TabIndex = 15;
@@ -213,7 +213,7 @@
             // 
             this.illness.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.illness.ForeColor = System.Drawing.Color.Green;
-            this.illness.Location = new System.Drawing.Point(1435, 422);
+            this.illness.Location = new System.Drawing.Point(1466, 424);
             this.illness.Name = "illness";
             this.illness.Size = new System.Drawing.Size(64, 32);
             this.illness.TabIndex = 16;
@@ -224,7 +224,7 @@
             // 
             this.death.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.death.ForeColor = System.Drawing.Color.Green;
-            this.death.Location = new System.Drawing.Point(1366, 461);
+            this.death.Location = new System.Drawing.Point(1466, 459);
             this.death.Name = "death";
             this.death.Size = new System.Drawing.Size(64, 32);
             this.death.TabIndex = 17;
@@ -235,7 +235,7 @@
             // 
             this.percent_death.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.percent_death.ForeColor = System.Drawing.Color.Green;
-            this.percent_death.Location = new System.Drawing.Point(1419, 461);
+            this.percent_death.Location = new System.Drawing.Point(1528, 459);
             this.percent_death.Name = "percent_death";
             this.percent_death.Size = new System.Drawing.Size(44, 32);
             this.percent_death.TabIndex = 18;
@@ -253,7 +253,7 @@
             this.groupBoxSpeed.Controls.Add(this.radioButton3);
             this.groupBoxSpeed.Controls.Add(this.radioButton2);
             this.groupBoxSpeed.Controls.Add(this.radioButton1);
-            this.groupBoxSpeed.Location = new System.Drawing.Point(216, 807);
+            this.groupBoxSpeed.Location = new System.Drawing.Point(198, 844);
             this.groupBoxSpeed.Name = "groupBoxSpeed";
             this.groupBoxSpeed.Size = new System.Drawing.Size(236, 42);
             this.groupBoxSpeed.TabIndex = 23;
@@ -328,7 +328,7 @@
             // pictureBox_Healthy
             // 
             this.pictureBox_Healthy.BackColor = System.Drawing.Color.SkyBlue;
-            this.pictureBox_Healthy.Location = new System.Drawing.Point(1062, 60);
+            this.pictureBox_Healthy.Location = new System.Drawing.Point(1552, 12);
             this.pictureBox_Healthy.Name = "pictureBox_Healthy";
             this.pictureBox_Healthy.Size = new System.Drawing.Size(20, 20);
             this.pictureBox_Healthy.TabIndex = 26;
@@ -338,7 +338,7 @@
             // pictureBox_Incub
             // 
             this.pictureBox_Incub.BackColor = System.Drawing.Color.Salmon;
-            this.pictureBox_Incub.Location = new System.Drawing.Point(1062, 100);
+            this.pictureBox_Incub.Location = new System.Drawing.Point(1552, 52);
             this.pictureBox_Incub.Name = "pictureBox_Incub";
             this.pictureBox_Incub.Size = new System.Drawing.Size(20, 20);
             this.pictureBox_Incub.TabIndex = 27;
@@ -348,7 +348,7 @@
             // pictureBox_Illness
             // 
             this.pictureBox_Illness.BackColor = System.Drawing.Color.Brown;
-            this.pictureBox_Illness.Location = new System.Drawing.Point(1062, 140);
+            this.pictureBox_Illness.Location = new System.Drawing.Point(1552, 92);
             this.pictureBox_Illness.Name = "pictureBox_Illness";
             this.pictureBox_Illness.Size = new System.Drawing.Size(20, 20);
             this.pictureBox_Illness.TabIndex = 28;
@@ -358,7 +358,7 @@
             // pictureBox_Recovered
             // 
             this.pictureBox_Recovered.BackColor = System.Drawing.Color.LightGreen;
-            this.pictureBox_Recovered.Location = new System.Drawing.Point(1062, 180);
+            this.pictureBox_Recovered.Location = new System.Drawing.Point(1552, 132);
             this.pictureBox_Recovered.Name = "pictureBox_Recovered";
             this.pictureBox_Recovered.Size = new System.Drawing.Size(20, 20);
             this.pictureBox_Recovered.TabIndex = 29;
@@ -368,7 +368,7 @@
             // pictureBox_Dead
             // 
             this.pictureBox_Dead.BackColor = System.Drawing.Color.Black;
-            this.pictureBox_Dead.Location = new System.Drawing.Point(1062, 220);
+            this.pictureBox_Dead.Location = new System.Drawing.Point(1552, 172);
             this.pictureBox_Dead.Name = "pictureBox_Dead";
             this.pictureBox_Dead.Size = new System.Drawing.Size(20, 20);
             this.pictureBox_Dead.TabIndex = 30;
@@ -377,58 +377,58 @@
             // 
             // number_of_healthy
             // 
-            this.number_of_healthy.AutoSize = true;
             this.number_of_healthy.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.number_of_healthy.ForeColor = System.Drawing.Color.Navy;
-            this.number_of_healthy.Location = new System.Drawing.Point(1088, 57);
+            this.number_of_healthy.Location = new System.Drawing.Point(1481, 11);
             this.number_of_healthy.Name = "number_of_healthy";
             this.number_of_healthy.Size = new System.Drawing.Size(65, 23);
             this.number_of_healthy.TabIndex = 31;
             this.number_of_healthy.Text = "10000";
+            this.number_of_healthy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // number_of_incub
             // 
-            this.number_of_incub.AutoSize = true;
             this.number_of_incub.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.number_of_incub.ForeColor = System.Drawing.Color.Tomato;
-            this.number_of_incub.Location = new System.Drawing.Point(1088, 97);
+            this.number_of_incub.Location = new System.Drawing.Point(1481, 49);
             this.number_of_incub.Name = "number_of_incub";
             this.number_of_incub.Size = new System.Drawing.Size(65, 23);
             this.number_of_incub.TabIndex = 32;
             this.number_of_incub.Text = "10000";
+            this.number_of_incub.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // number_of_illness
             // 
-            this.number_of_illness.AutoSize = true;
             this.number_of_illness.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.number_of_illness.ForeColor = System.Drawing.Color.Brown;
-            this.number_of_illness.Location = new System.Drawing.Point(1088, 137);
+            this.number_of_illness.Location = new System.Drawing.Point(1481, 89);
             this.number_of_illness.Name = "number_of_illness";
             this.number_of_illness.Size = new System.Drawing.Size(65, 23);
             this.number_of_illness.TabIndex = 33;
             this.number_of_illness.Text = "10000";
+            this.number_of_illness.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // number_of_recovery
             // 
-            this.number_of_recovery.AutoSize = true;
             this.number_of_recovery.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.number_of_recovery.ForeColor = System.Drawing.Color.LimeGreen;
-            this.number_of_recovery.Location = new System.Drawing.Point(1088, 177);
+            this.number_of_recovery.Location = new System.Drawing.Point(1481, 129);
             this.number_of_recovery.Name = "number_of_recovery";
             this.number_of_recovery.Size = new System.Drawing.Size(65, 23);
             this.number_of_recovery.TabIndex = 34;
             this.number_of_recovery.Text = "10000";
+            this.number_of_recovery.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // number_of_dead
             // 
-            this.number_of_dead.AutoSize = true;
             this.number_of_dead.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.number_of_dead.ForeColor = System.Drawing.Color.Black;
-            this.number_of_dead.Location = new System.Drawing.Point(1088, 217);
+            this.number_of_dead.Location = new System.Drawing.Point(1481, 169);
             this.number_of_dead.Name = "number_of_dead";
             this.number_of_dead.Size = new System.Drawing.Size(65, 23);
             this.number_of_dead.TabIndex = 35;
             this.number_of_dead.Text = "10000";
+            this.number_of_dead.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // new_mutation
             // 
@@ -471,7 +471,7 @@
             this.day_form.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_form.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.day_form.ForeColor = System.Drawing.Color.White;
-            this.day_form.Location = new System.Drawing.Point(1026, 1);
+            this.day_form.Location = new System.Drawing.Point(1059, 11);
             this.day_form.Name = "day_form";
             this.day_form.RippleColor = System.Drawing.Color.Red;
             this.day_form.RoundingEnable = true;
@@ -498,7 +498,7 @@
             this.button_pause.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_pause.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_pause.ForeColor = System.Drawing.Color.White;
-            this.button_pause.Location = new System.Drawing.Point(515, 807);
+            this.button_pause.Location = new System.Drawing.Point(509, 844);
             this.button_pause.Name = "button_pause";
             this.button_pause.RippleColor = System.Drawing.Color.Red;
             this.button_pause.RoundingEnable = true;
@@ -525,7 +525,7 @@
             this.button_play.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_play.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_play.ForeColor = System.Drawing.Color.White;
-            this.button_play.Location = new System.Drawing.Point(458, 807);
+            this.button_play.Location = new System.Drawing.Point(452, 844);
             this.button_play.Name = "button_play";
             this.button_play.RippleColor = System.Drawing.Color.Red;
             this.button_play.RoundingEnable = true;
@@ -552,7 +552,7 @@
             this.button_step.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_step.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_step.ForeColor = System.Drawing.Color.White;
-            this.button_step.Location = new System.Drawing.Point(848, 807);
+            this.button_step.Location = new System.Drawing.Point(881, 845);
             this.button_step.Name = "button_step";
             this.button_step.RippleColor = System.Drawing.Color.Red;
             this.button_step.RoundingEnable = true;
@@ -579,7 +579,7 @@
             this.button_reset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_reset.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_reset.ForeColor = System.Drawing.Color.White;
-            this.button_reset.Location = new System.Drawing.Point(20, 807);
+            this.button_reset.Location = new System.Drawing.Point(3, 845);
             this.button_reset.Name = "button_reset";
             this.button_reset.RippleColor = System.Drawing.Color.Red;
             this.button_reset.RoundingEnable = true;
@@ -597,7 +597,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.ClientSize = new System.Drawing.Size(1584, 911);
             this.Controls.Add(this.number_of_dead);
             this.Controls.Add(this.number_of_recovery);
             this.Controls.Add(this.number_of_illness);
@@ -634,8 +634,8 @@
             this.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1600, 900);
-            this.MinimumSize = new System.Drawing.Size(1600, 900);
+            this.MaximumSize = new System.Drawing.Size(1600, 950);
+            this.MinimumSize = new System.Drawing.Size(1600, 950);
             this.Name = "Imitation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Imitation";
