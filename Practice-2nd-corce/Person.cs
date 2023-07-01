@@ -6,19 +6,17 @@ using System.Threading.Tasks;
 
 namespace Practice_2nd_corce
 {
-    internal abstract class Person
+    internal class Person
     {
-        protected string state;
-        protected System.Drawing.Color color;
-        protected int age;
+        public string State { get; set; }
+        public System.Drawing.Color Color { get; set; }
+        public int Age { get; set; }
 
-        public string State { get { return state; } set { state = value; } }
-        public System.Drawing.Color Color { get { return color; } set { color = value; } }
-        public int Age { get { return age; } set { age = value; } }
-
-        public void RandomAge() 
+        public Person() 
         {
-            this.age = Randomization.Rand(15, 90);
+            State = "Empty";
+            Color = System.Drawing.Color.Silver;
+            Age = 0;
         }
     }
 }
