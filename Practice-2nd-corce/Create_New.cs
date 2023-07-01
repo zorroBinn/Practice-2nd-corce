@@ -276,17 +276,60 @@ namespace Practice_2nd_corce
 
         private void about_bacteria_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Патогенные бактерии могут проявлять свою вредность разными способами:\n" +
+                "некоторые из них выделяют токсины, разрушающие клетки,\n" +
+                "другие способны проникать в клетки и размножаться в них, вызывая их гибель или трансформацию,\n" +
+                "третьи могут образовывать биопленки или капсулы, которые защищают их от иммунной системы.\n" +
+                "Доступна полная настройка параметров бактерии, с уменьшенным периодом болезни.\n" +
+                "Мутация способна изменить вероятность заражения, период болезни или летальность.", "Бактерия", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void about_virus_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Вирусы - это неклеточные инфекционные агенты,\n" +
+                "которые могут размножаться только внутри клеток хозяев.\n" +
+                "Время жизни вируса в клетке зависит от типа вируса, типа клетки и условий среды\n." +
+                "Доступна полная настройка параметров вируса, с увеличенным периодом болезни.\n" +
+                "Мутация способна изменить вероятность заражения, период болезни или летальность.", "Вирус", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void about_parasite_Click(object sender, EventArgs e)
+        private void about_prion_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Прион - это особый вид инфекционного агента, который не содержит нуклеиновых кислот,\n" +
+                "а состоит только из белка. Прион способен изменять форму нормального клеточного белка\n" +
+                "и превращать его в себе подобный. Таким образом, прион размножается внутри клетки,\n" +
+                "вызывая её повреждение и гибель. Прионы устойчивы к многим физическим и химическим факторам\n" +
+                "Прионы приводят к образованию пустот в мозговой ткани.\n" +
+                "Болезни,вызванные прионами чаще всего неизлечимы и смертельны.\n" +
+                "Особенностью приона является его очень долгое развитие (от 3-х месяцев до 3-х лет.\n" +
+                "У приона нет инкубационного периода, его заразность очень мала, а летальность высока.\n" +
+                "Эти факторы обуславливают ограниченность настройки параметров болезни.\n" +
+                "Шанс на мутацию очень мал, однако она способна изменить все параметры болезни.", "Прион", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
+        private void about_bacteria_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip t = new ToolTip();
+            t.SetToolTip(about_bacteria, "Краткая справка о бактериях");
+            t.AutomaticDelay = 200;
+            t.IsBalloon = true;
+        }
+
+        private void about_virus_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip t = new ToolTip();
+            t.SetToolTip(about_virus, "Краткая справка о вирусах");
+            t.AutomaticDelay = 200;
+            t.IsBalloon = true;
+        }
+
+        private void about_prion_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip t = new ToolTip();
+            t.SetToolTip(about_prion, "Краткая справка о прионах");
+            t.AutomaticDelay = 200;
+            t.IsBalloon = true;
         }
     }
 }
+

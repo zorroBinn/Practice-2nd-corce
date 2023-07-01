@@ -385,6 +385,12 @@ namespace Practice_2nd_corce
         private void button_reset_Click(object sender, EventArgs e)
         {
             timer.Stop();
+            DialogResult result = MessageBox.Show("Сохранить мутации вируса?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(result == DialogResult.No)
+            {
+                disease = new Disease();
+                DiseaseInfoUpdate();
+            }
             button_pause.Visible = true;
             button_play.Visible = true;
             button_step.Visible = true;
@@ -439,8 +445,6 @@ namespace Practice_2nd_corce
                 string text = "";
                 Person person = persons[row, column];
                 ToolTip tt = new ToolTip();
-                //tt.IsBalloon = true;
-                tt.AutoPopDelay = 2000;
                 if (person.State == "Здоров")
                 {
                     Healthy health = (Healthy)persons[row, column];
