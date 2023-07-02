@@ -12,9 +12,9 @@ namespace Practice_2nd_corce
 
         public Healthy()
         {
-            Age = Randomization.Rand(15, 90);
+            Age = Randomization.Rand(15, 80);
             State = "Здоров";
-            Color = System.Drawing.Color.SkyBlue;
+            Color = System.Drawing.Color.DeepSkyBlue;
             if (Age < 25)
             {
                 Immunity = Randomization.Rand(0, 90);
