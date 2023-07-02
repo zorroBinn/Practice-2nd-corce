@@ -49,7 +49,7 @@ namespace Practice_2nd_corce
                     }
                     break; 
                 case 1:
-                    mutation_probability = Randomization.Rand(1, 10);
+                    mutation_probability = Randomization.Rand(1, 9);
                     if (Randomization.Rand(1, 100) <= mutation_probability)
                     {
                         if (MutationSet(5, 10, 10)) return true;

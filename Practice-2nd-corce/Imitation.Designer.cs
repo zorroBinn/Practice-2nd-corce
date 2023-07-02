@@ -45,7 +45,6 @@
             this.illness = new System.Windows.Forms.Label();
             this.death = new System.Windows.Forms.Label();
             this.percent_death = new System.Windows.Forms.Label();
-            this.timer = new System.Windows.Forms.Timer(this.components);
             this.groupBoxSpeed = new System.Windows.Forms.GroupBox();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -62,11 +61,23 @@
             this.number_of_illness = new System.Windows.Forms.Label();
             this.number_of_recovery = new System.Windows.Forms.Label();
             this.number_of_dead = new System.Windows.Forms.Label();
-            this.new_mutation = new yt_DesignUI.yt_Button();
+            this.groupBox_info = new System.Windows.Forms.GroupBox();
+            this.save_into_file_button = new yt_DesignUI.yt_Button();
             this.day_form = new yt_DesignUI.yt_Button();
+            this.groupBox_create = new System.Windows.Forms.GroupBox();
+            this.checkBox_dead_delete = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.imitation_start_button = new yt_DesignUI.yt_Button();
+            this.numberOfInfected = new System.Windows.Forms.Label();
+            this.numberOfPeople = new System.Windows.Forms.Label();
+            this.label_numberOfInfected = new System.Windows.Forms.Label();
+            this.label_numberOfPeople = new System.Windows.Forms.Label();
+            this.trackBar_numberOfInfected = new System.Windows.Forms.TrackBar();
+            this.trackBar_numberOfPeople = new System.Windows.Forms.TrackBar();
+            this.move_timer = new System.Windows.Forms.Timer(this.components);
+            this.new_mutation = new yt_DesignUI.yt_Button();
             this.button_pause = new yt_DesignUI.yt_Button();
             this.button_play = new yt_DesignUI.yt_Button();
-            this.button_step = new yt_DesignUI.yt_Button();
             this.button_reset = new yt_DesignUI.yt_Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.groupBoxSpeed.SuspendLayout();
@@ -75,10 +86,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Illness)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Recovered)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Dead)).BeginInit();
+            this.groupBox_info.SuspendLayout();
+            this.groupBox_create.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_numberOfInfected)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_numberOfPeople)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox
             // 
+            this.pictureBox.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox.Location = new System.Drawing.Point(3, 1);
             this.pictureBox.Name = "pictureBox";
@@ -242,18 +258,13 @@
             this.percent_death.Text = "%";
             this.percent_death.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // timer
-            // 
-            this.timer.Interval = 400;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
             // groupBoxSpeed
             // 
             this.groupBoxSpeed.Controls.Add(this.radioButton4);
             this.groupBoxSpeed.Controls.Add(this.radioButton3);
             this.groupBoxSpeed.Controls.Add(this.radioButton2);
             this.groupBoxSpeed.Controls.Add(this.radioButton1);
-            this.groupBoxSpeed.Location = new System.Drawing.Point(198, 844);
+            this.groupBoxSpeed.Location = new System.Drawing.Point(828, 845);
             this.groupBoxSpeed.Name = "groupBoxSpeed";
             this.groupBoxSpeed.Size = new System.Drawing.Size(236, 42);
             this.groupBoxSpeed.TabIndex = 23;
@@ -327,8 +338,8 @@
             // 
             // pictureBox_Healthy
             // 
-            this.pictureBox_Healthy.BackColor = System.Drawing.Color.SkyBlue;
-            this.pictureBox_Healthy.Location = new System.Drawing.Point(1552, 12);
+            this.pictureBox_Healthy.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.pictureBox_Healthy.Location = new System.Drawing.Point(493, 12);
             this.pictureBox_Healthy.Name = "pictureBox_Healthy";
             this.pictureBox_Healthy.Size = new System.Drawing.Size(20, 20);
             this.pictureBox_Healthy.TabIndex = 26;
@@ -338,7 +349,7 @@
             // pictureBox_Incub
             // 
             this.pictureBox_Incub.BackColor = System.Drawing.Color.Salmon;
-            this.pictureBox_Incub.Location = new System.Drawing.Point(1552, 52);
+            this.pictureBox_Incub.Location = new System.Drawing.Point(493, 51);
             this.pictureBox_Incub.Name = "pictureBox_Incub";
             this.pictureBox_Incub.Size = new System.Drawing.Size(20, 20);
             this.pictureBox_Incub.TabIndex = 27;
@@ -348,7 +359,7 @@
             // pictureBox_Illness
             // 
             this.pictureBox_Illness.BackColor = System.Drawing.Color.Brown;
-            this.pictureBox_Illness.Location = new System.Drawing.Point(1552, 92);
+            this.pictureBox_Illness.Location = new System.Drawing.Point(493, 91);
             this.pictureBox_Illness.Name = "pictureBox_Illness";
             this.pictureBox_Illness.Size = new System.Drawing.Size(20, 20);
             this.pictureBox_Illness.TabIndex = 28;
@@ -358,7 +369,7 @@
             // pictureBox_Recovered
             // 
             this.pictureBox_Recovered.BackColor = System.Drawing.Color.LightGreen;
-            this.pictureBox_Recovered.Location = new System.Drawing.Point(1552, 132);
+            this.pictureBox_Recovered.Location = new System.Drawing.Point(493, 132);
             this.pictureBox_Recovered.Name = "pictureBox_Recovered";
             this.pictureBox_Recovered.Size = new System.Drawing.Size(20, 20);
             this.pictureBox_Recovered.TabIndex = 29;
@@ -368,7 +379,7 @@
             // pictureBox_Dead
             // 
             this.pictureBox_Dead.BackColor = System.Drawing.Color.Black;
-            this.pictureBox_Dead.Location = new System.Drawing.Point(1552, 172);
+            this.pictureBox_Dead.Location = new System.Drawing.Point(493, 172);
             this.pictureBox_Dead.Name = "pictureBox_Dead";
             this.pictureBox_Dead.Size = new System.Drawing.Size(20, 20);
             this.pictureBox_Dead.TabIndex = 30;
@@ -379,56 +390,280 @@
             // 
             this.number_of_healthy.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.number_of_healthy.ForeColor = System.Drawing.Color.Navy;
-            this.number_of_healthy.Location = new System.Drawing.Point(1481, 11);
+            this.number_of_healthy.Location = new System.Drawing.Point(422, 11);
             this.number_of_healthy.Name = "number_of_healthy";
             this.number_of_healthy.Size = new System.Drawing.Size(65, 23);
             this.number_of_healthy.TabIndex = 31;
-            this.number_of_healthy.Text = "10000";
+            this.number_of_healthy.Text = "0";
             this.number_of_healthy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // number_of_incub
             // 
             this.number_of_incub.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.number_of_incub.ForeColor = System.Drawing.Color.Tomato;
-            this.number_of_incub.Location = new System.Drawing.Point(1481, 49);
+            this.number_of_incub.Location = new System.Drawing.Point(422, 48);
             this.number_of_incub.Name = "number_of_incub";
             this.number_of_incub.Size = new System.Drawing.Size(65, 23);
             this.number_of_incub.TabIndex = 32;
-            this.number_of_incub.Text = "10000";
+            this.number_of_incub.Text = "0";
             this.number_of_incub.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // number_of_illness
             // 
             this.number_of_illness.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.number_of_illness.ForeColor = System.Drawing.Color.Brown;
-            this.number_of_illness.Location = new System.Drawing.Point(1481, 89);
+            this.number_of_illness.Location = new System.Drawing.Point(422, 88);
             this.number_of_illness.Name = "number_of_illness";
             this.number_of_illness.Size = new System.Drawing.Size(65, 23);
             this.number_of_illness.TabIndex = 33;
-            this.number_of_illness.Text = "10000";
+            this.number_of_illness.Text = "0";
             this.number_of_illness.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // number_of_recovery
             // 
             this.number_of_recovery.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.number_of_recovery.ForeColor = System.Drawing.Color.LimeGreen;
-            this.number_of_recovery.Location = new System.Drawing.Point(1481, 129);
+            this.number_of_recovery.Location = new System.Drawing.Point(422, 129);
             this.number_of_recovery.Name = "number_of_recovery";
             this.number_of_recovery.Size = new System.Drawing.Size(65, 23);
             this.number_of_recovery.TabIndex = 34;
-            this.number_of_recovery.Text = "10000";
+            this.number_of_recovery.Text = "0";
             this.number_of_recovery.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // number_of_dead
             // 
             this.number_of_dead.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.number_of_dead.ForeColor = System.Drawing.Color.Black;
-            this.number_of_dead.Location = new System.Drawing.Point(1481, 169);
+            this.number_of_dead.Location = new System.Drawing.Point(422, 169);
             this.number_of_dead.Name = "number_of_dead";
             this.number_of_dead.Size = new System.Drawing.Size(65, 23);
             this.number_of_dead.TabIndex = 35;
-            this.number_of_dead.Text = "10000";
+            this.number_of_dead.Text = "0";
             this.number_of_dead.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // groupBox_info
+            // 
+            this.groupBox_info.Controls.Add(this.save_into_file_button);
+            this.groupBox_info.Controls.Add(this.number_of_healthy);
+            this.groupBox_info.Controls.Add(this.number_of_incub);
+            this.groupBox_info.Controls.Add(this.number_of_illness);
+            this.groupBox_info.Controls.Add(this.number_of_recovery);
+            this.groupBox_info.Controls.Add(this.number_of_dead);
+            this.groupBox_info.Controls.Add(this.day_form);
+            this.groupBox_info.Controls.Add(this.pictureBox_Healthy);
+            this.groupBox_info.Controls.Add(this.pictureBox_Incub);
+            this.groupBox_info.Controls.Add(this.pictureBox_Illness);
+            this.groupBox_info.Controls.Add(this.pictureBox_Recovered);
+            this.groupBox_info.Controls.Add(this.pictureBox_Dead);
+            this.groupBox_info.Location = new System.Drawing.Point(1059, 1);
+            this.groupBox_info.Name = "groupBox_info";
+            this.groupBox_info.Size = new System.Drawing.Size(523, 215);
+            this.groupBox_info.TabIndex = 36;
+            this.groupBox_info.TabStop = false;
+            this.groupBox_info.Visible = false;
+            // 
+            // save_into_file_button
+            // 
+            this.save_into_file_button.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.save_into_file_button.BackColorAdditional = System.Drawing.Color.Navy;
+            this.save_into_file_button.BackColorGradientEnabled = true;
+            this.save_into_file_button.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.save_into_file_button.BorderColor = System.Drawing.Color.Tomato;
+            this.save_into_file_button.BorderColorEnabled = false;
+            this.save_into_file_button.BorderColorOnHover = System.Drawing.Color.Tomato;
+            this.save_into_file_button.BorderColorOnHoverEnabled = false;
+            this.save_into_file_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.save_into_file_button.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.save_into_file_button.ForeColor = System.Drawing.Color.White;
+            this.save_into_file_button.Location = new System.Drawing.Point(137, 142);
+            this.save_into_file_button.Name = "save_into_file_button";
+            this.save_into_file_button.RippleColor = System.Drawing.Color.Red;
+            this.save_into_file_button.RoundingEnable = true;
+            this.save_into_file_button.Size = new System.Drawing.Size(227, 50);
+            this.save_into_file_button.TabIndex = 38;
+            this.save_into_file_button.Text = "Сохранить в файл";
+            this.save_into_file_button.TextHover = null;
+            this.save_into_file_button.UseDownPressEffectOnClick = true;
+            this.save_into_file_button.UseRippleEffect = true;
+            this.save_into_file_button.UseVisualStyleBackColor = false;
+            this.save_into_file_button.UseZoomEffectOnHover = false;
+            this.save_into_file_button.Visible = false;
+            // 
+            // day_form
+            // 
+            this.day_form.BackColor = System.Drawing.Color.Red;
+            this.day_form.BackColorAdditional = System.Drawing.Color.Black;
+            this.day_form.BackColorGradientEnabled = true;
+            this.day_form.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.day_form.BorderColor = System.Drawing.Color.Tomato;
+            this.day_form.BorderColorEnabled = false;
+            this.day_form.BorderColorOnHover = System.Drawing.Color.Tomato;
+            this.day_form.BorderColorOnHoverEnabled = false;
+            this.day_form.Cursor = System.Windows.Forms.Cursors.Default;
+            this.day_form.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.day_form.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.day_form.ForeColor = System.Drawing.Color.White;
+            this.day_form.Location = new System.Drawing.Point(6, 11);
+            this.day_form.Name = "day_form";
+            this.day_form.RippleColor = System.Drawing.Color.Red;
+            this.day_form.RoundingEnable = true;
+            this.day_form.Size = new System.Drawing.Size(89, 42);
+            this.day_form.TabIndex = 19;
+            this.day_form.TabStop = false;
+            this.day_form.Text = "0";
+            this.day_form.TextHover = null;
+            this.day_form.UseDownPressEffectOnClick = false;
+            this.day_form.UseRippleEffect = false;
+            this.day_form.UseVisualStyleBackColor = false;
+            this.day_form.UseZoomEffectOnHover = false;
+            // 
+            // groupBox_create
+            // 
+            this.groupBox_create.BackColor = System.Drawing.Color.Lavender;
+            this.groupBox_create.Controls.Add(this.checkBox_dead_delete);
+            this.groupBox_create.Controls.Add(this.label1);
+            this.groupBox_create.Controls.Add(this.imitation_start_button);
+            this.groupBox_create.Controls.Add(this.numberOfInfected);
+            this.groupBox_create.Controls.Add(this.numberOfPeople);
+            this.groupBox_create.Controls.Add(this.label_numberOfInfected);
+            this.groupBox_create.Controls.Add(this.label_numberOfPeople);
+            this.groupBox_create.Controls.Add(this.trackBar_numberOfInfected);
+            this.groupBox_create.Controls.Add(this.trackBar_numberOfPeople);
+            this.groupBox_create.Location = new System.Drawing.Point(-7, 1);
+            this.groupBox_create.Name = "groupBox_create";
+            this.groupBox_create.Size = new System.Drawing.Size(1071, 911);
+            this.groupBox_create.TabIndex = 37;
+            this.groupBox_create.TabStop = false;
+            // 
+            // checkBox_dead_delete
+            // 
+            this.checkBox_dead_delete.AutoSize = true;
+            this.checkBox_dead_delete.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox_dead_delete.ForeColor = System.Drawing.Color.Navy;
+            this.checkBox_dead_delete.Location = new System.Drawing.Point(377, 402);
+            this.checkBox_dead_delete.Name = "checkBox_dead_delete";
+            this.checkBox_dead_delete.Size = new System.Drawing.Size(285, 33);
+            this.checkBox_dead_delete.TabIndex = 27;
+            this.checkBox_dead_delete.Text = "Убирать умерших с поля";
+            this.checkBox_dead_delete.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.Navy;
+            this.label1.Location = new System.Drawing.Point(143, 340);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 16);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "(до 10% от числа людей)";
+            // 
+            // imitation_start_button
+            // 
+            this.imitation_start_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.imitation_start_button.BackColorAdditional = System.Drawing.Color.Navy;
+            this.imitation_start_button.BackColorGradientEnabled = true;
+            this.imitation_start_button.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.imitation_start_button.BorderColor = System.Drawing.Color.Tomato;
+            this.imitation_start_button.BorderColorEnabled = false;
+            this.imitation_start_button.BorderColorOnHover = System.Drawing.Color.Tomato;
+            this.imitation_start_button.BorderColorOnHoverEnabled = false;
+            this.imitation_start_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imitation_start_button.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.imitation_start_button.ForeColor = System.Drawing.Color.White;
+            this.imitation_start_button.Location = new System.Drawing.Point(329, 489);
+            this.imitation_start_button.Name = "imitation_start_button";
+            this.imitation_start_button.RippleColor = System.Drawing.Color.Black;
+            this.imitation_start_button.RoundingEnable = true;
+            this.imitation_start_button.Size = new System.Drawing.Size(429, 74);
+            this.imitation_start_button.TabIndex = 25;
+            this.imitation_start_button.Text = "Начать имитацию";
+            this.imitation_start_button.TextHover = null;
+            this.imitation_start_button.UseDownPressEffectOnClick = false;
+            this.imitation_start_button.UseRippleEffect = false;
+            this.imitation_start_button.UseVisualStyleBackColor = false;
+            this.imitation_start_button.UseZoomEffectOnHover = false;
+            this.imitation_start_button.Click += new System.EventHandler(this.imitation_start_button_Click);
+            // 
+            // numberOfInfected
+            // 
+            this.numberOfInfected.AutoSize = true;
+            this.numberOfInfected.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numberOfInfected.ForeColor = System.Drawing.Color.Navy;
+            this.numberOfInfected.Location = new System.Drawing.Point(692, 314);
+            this.numberOfInfected.Name = "numberOfInfected";
+            this.numberOfInfected.Size = new System.Drawing.Size(25, 28);
+            this.numberOfInfected.TabIndex = 10;
+            this.numberOfInfected.Text = "1";
+            // 
+            // numberOfPeople
+            // 
+            this.numberOfPeople.AutoSize = true;
+            this.numberOfPeople.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numberOfPeople.ForeColor = System.Drawing.Color.Navy;
+            this.numberOfPeople.Location = new System.Drawing.Point(692, 189);
+            this.numberOfPeople.Name = "numberOfPeople";
+            this.numberOfPeople.Size = new System.Drawing.Size(38, 28);
+            this.numberOfPeople.TabIndex = 9;
+            this.numberOfPeople.Text = "50";
+            // 
+            // label_numberOfInfected
+            // 
+            this.label_numberOfInfected.AutoSize = true;
+            this.label_numberOfInfected.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_numberOfInfected.ForeColor = System.Drawing.Color.Navy;
+            this.label_numberOfInfected.Location = new System.Drawing.Point(143, 312);
+            this.label_numberOfInfected.Name = "label_numberOfInfected";
+            this.label_numberOfInfected.Size = new System.Drawing.Size(171, 28);
+            this.label_numberOfInfected.TabIndex = 8;
+            this.label_numberOfInfected.Text = "Заражённых:";
+            // 
+            // label_numberOfPeople
+            // 
+            this.label_numberOfPeople.AutoSize = true;
+            this.label_numberOfPeople.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_numberOfPeople.ForeColor = System.Drawing.Color.Navy;
+            this.label_numberOfPeople.Location = new System.Drawing.Point(93, 187);
+            this.label_numberOfPeople.Name = "label_numberOfPeople";
+            this.label_numberOfPeople.Size = new System.Drawing.Size(268, 28);
+            this.label_numberOfPeople.TabIndex = 7;
+            this.label_numberOfPeople.Text = "Количество человек:";
+            // 
+            // trackBar_numberOfInfected
+            // 
+            this.trackBar_numberOfInfected.BackColor = System.Drawing.Color.White;
+            this.trackBar_numberOfInfected.Location = new System.Drawing.Point(377, 297);
+            this.trackBar_numberOfInfected.Maximum = 5;
+            this.trackBar_numberOfInfected.Minimum = 1;
+            this.trackBar_numberOfInfected.Name = "trackBar_numberOfInfected";
+            this.trackBar_numberOfInfected.Size = new System.Drawing.Size(294, 45);
+            this.trackBar_numberOfInfected.TabIndex = 1;
+            this.trackBar_numberOfInfected.TabStop = false;
+            this.trackBar_numberOfInfected.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.trackBar_numberOfInfected.Value = 1;
+            this.trackBar_numberOfInfected.Scroll += new System.EventHandler(this.trackBar_numberOfInfected_Scroll);
+            // 
+            // trackBar_numberOfPeople
+            // 
+            this.trackBar_numberOfPeople.BackColor = System.Drawing.Color.White;
+            this.trackBar_numberOfPeople.LargeChange = 10;
+            this.trackBar_numberOfPeople.Location = new System.Drawing.Point(377, 172);
+            this.trackBar_numberOfPeople.Maximum = 500;
+            this.trackBar_numberOfPeople.Minimum = 50;
+            this.trackBar_numberOfPeople.Name = "trackBar_numberOfPeople";
+            this.trackBar_numberOfPeople.Size = new System.Drawing.Size(294, 45);
+            this.trackBar_numberOfPeople.SmallChange = 10;
+            this.trackBar_numberOfPeople.TabIndex = 0;
+            this.trackBar_numberOfPeople.TabStop = false;
+            this.trackBar_numberOfPeople.TickFrequency = 10;
+            this.trackBar_numberOfPeople.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.trackBar_numberOfPeople.Value = 50;
+            this.trackBar_numberOfPeople.Scroll += new System.EventHandler(this.trackBar_numberOfPeople_Scroll);
+            // 
+            // move_timer
+            // 
+            this.move_timer.Interval = 400;
+            this.move_timer.Tick += new System.EventHandler(this.move_timer_Tick);
             // 
             // new_mutation
             // 
@@ -456,34 +691,6 @@
             this.new_mutation.UseVisualStyleBackColor = false;
             this.new_mutation.UseZoomEffectOnHover = false;
             this.new_mutation.Visible = false;
-            // 
-            // day_form
-            // 
-            this.day_form.BackColor = System.Drawing.Color.Red;
-            this.day_form.BackColorAdditional = System.Drawing.Color.Black;
-            this.day_form.BackColorGradientEnabled = true;
-            this.day_form.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.day_form.BorderColor = System.Drawing.Color.Tomato;
-            this.day_form.BorderColorEnabled = false;
-            this.day_form.BorderColorOnHover = System.Drawing.Color.Tomato;
-            this.day_form.BorderColorOnHoverEnabled = false;
-            this.day_form.Cursor = System.Windows.Forms.Cursors.Default;
-            this.day_form.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.day_form.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.day_form.ForeColor = System.Drawing.Color.White;
-            this.day_form.Location = new System.Drawing.Point(1059, 11);
-            this.day_form.Name = "day_form";
-            this.day_form.RippleColor = System.Drawing.Color.Red;
-            this.day_form.RoundingEnable = true;
-            this.day_form.Size = new System.Drawing.Size(89, 42);
-            this.day_form.TabIndex = 19;
-            this.day_form.TabStop = false;
-            this.day_form.Text = "0";
-            this.day_form.TextHover = null;
-            this.day_form.UseDownPressEffectOnClick = false;
-            this.day_form.UseRippleEffect = false;
-            this.day_form.UseVisualStyleBackColor = false;
-            this.day_form.UseZoomEffectOnHover = false;
             // 
             // button_pause
             // 
@@ -539,33 +746,6 @@
             this.button_play.UseZoomEffectOnHover = false;
             this.button_play.Click += new System.EventHandler(this.button_play_Click);
             // 
-            // button_step
-            // 
-            this.button_step.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button_step.BackColorAdditional = System.Drawing.Color.Navy;
-            this.button_step.BackColorGradientEnabled = true;
-            this.button_step.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.button_step.BorderColor = System.Drawing.Color.Tomato;
-            this.button_step.BorderColorEnabled = false;
-            this.button_step.BorderColorOnHover = System.Drawing.Color.Tomato;
-            this.button_step.BorderColorOnHoverEnabled = false;
-            this.button_step.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_step.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_step.ForeColor = System.Drawing.Color.White;
-            this.button_step.Location = new System.Drawing.Point(881, 845);
-            this.button_step.Name = "button_step";
-            this.button_step.RippleColor = System.Drawing.Color.Red;
-            this.button_step.RoundingEnable = true;
-            this.button_step.Size = new System.Drawing.Size(172, 42);
-            this.button_step.TabIndex = 2;
-            this.button_step.Text = "Шаг";
-            this.button_step.TextHover = null;
-            this.button_step.UseDownPressEffectOnClick = true;
-            this.button_step.UseRippleEffect = true;
-            this.button_step.UseVisualStyleBackColor = false;
-            this.button_step.UseZoomEffectOnHover = false;
-            this.button_step.Click += new System.EventHandler(this.button_step_Click);
-            // 
             // button_reset
             // 
             this.button_reset.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -579,7 +759,7 @@
             this.button_reset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_reset.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_reset.ForeColor = System.Drawing.Color.White;
-            this.button_reset.Location = new System.Drawing.Point(3, 845);
+            this.button_reset.Location = new System.Drawing.Point(12, 845);
             this.button_reset.Name = "button_reset";
             this.button_reset.RippleColor = System.Drawing.Color.Red;
             this.button_reset.RoundingEnable = true;
@@ -598,20 +778,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 911);
-            this.Controls.Add(this.number_of_dead);
-            this.Controls.Add(this.number_of_recovery);
-            this.Controls.Add(this.number_of_illness);
-            this.Controls.Add(this.number_of_incub);
-            this.Controls.Add(this.number_of_healthy);
-            this.Controls.Add(this.pictureBox_Dead);
-            this.Controls.Add(this.pictureBox_Recovered);
-            this.Controls.Add(this.pictureBox_Illness);
-            this.Controls.Add(this.pictureBox_Incub);
-            this.Controls.Add(this.pictureBox_Healthy);
+            this.Controls.Add(this.groupBox_create);
             this.Controls.Add(this.new_mutation_label);
             this.Controls.Add(this.new_mutation);
             this.Controls.Add(this.groupBoxSpeed);
-            this.Controls.Add(this.day_form);
             this.Controls.Add(this.percent_death);
             this.Controls.Add(this.death);
             this.Controls.Add(this.illness);
@@ -628,9 +798,9 @@
             this.Controls.Add(this.label_type);
             this.Controls.Add(this.button_pause);
             this.Controls.Add(this.button_play);
-            this.Controls.Add(this.button_step);
             this.Controls.Add(this.button_reset);
             this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.groupBox_info);
             this.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -648,6 +818,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Illness)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Recovered)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Dead)).EndInit();
+            this.groupBox_info.ResumeLayout(false);
+            this.groupBox_create.ResumeLayout(false);
+            this.groupBox_create.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_numberOfInfected)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_numberOfPeople)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -657,7 +832,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox;
         private yt_DesignUI.yt_Button button_reset;
-        private yt_DesignUI.yt_Button button_step;
         private yt_DesignUI.yt_Button button_play;
         private yt_DesignUI.yt_Button button_pause;
         private System.Windows.Forms.Label label_type;
@@ -675,7 +849,6 @@
         private System.Windows.Forms.Label death;
         private System.Windows.Forms.Label percent_death;
         private yt_DesignUI.yt_Button day_form;
-        private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.GroupBox groupBoxSpeed;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
@@ -693,5 +866,18 @@
         private System.Windows.Forms.Label number_of_recovery;
         private System.Windows.Forms.Label number_of_dead;
         private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.GroupBox groupBox_info;
+        private System.Windows.Forms.GroupBox groupBox_create;
+        private System.Windows.Forms.TrackBar trackBar_numberOfPeople;
+        private yt_DesignUI.yt_Button imitation_start_button;
+        private System.Windows.Forms.Label numberOfInfected;
+        private System.Windows.Forms.Label numberOfPeople;
+        private System.Windows.Forms.Label label_numberOfInfected;
+        private System.Windows.Forms.Label label_numberOfPeople;
+        private System.Windows.Forms.TrackBar trackBar_numberOfInfected;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer move_timer;
+        private yt_DesignUI.yt_Button save_into_file_button;
+        private System.Windows.Forms.CheckBox checkBox_dead_delete;
     }
 }

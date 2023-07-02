@@ -12,11 +12,11 @@ namespace Practice_2nd_corce
         public int InfectionDays { get; set; }
         public int DayOfDisease { get; set; }
 
-        public Infected(int incub, int infection, int day_of_disease, int age)
+        public Infected(int incub, int infection, int day, int tick, int age)
         {
             IncubDays = incub;
             InfectionDays = infection;
-            DayOfDisease = day_of_disease;
+            DayOfDisease = day;
             Age = age;
             if (IncubDays > 0)
             {
