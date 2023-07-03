@@ -62,12 +62,9 @@
             this.number_of_recovery = new System.Windows.Forms.Label();
             this.number_of_dead = new System.Windows.Forms.Label();
             this.groupBox_info = new System.Windows.Forms.GroupBox();
-            this.save_into_file_button = new yt_DesignUI.yt_Button();
-            this.day_form = new yt_DesignUI.yt_Button();
             this.groupBox_create = new System.Windows.Forms.GroupBox();
             this.checkBox_dead_delete = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.imitation_start_button = new yt_DesignUI.yt_Button();
             this.numberOfInfected = new System.Windows.Forms.Label();
             this.numberOfPeople = new System.Windows.Forms.Label();
             this.label_numberOfInfected = new System.Windows.Forms.Label();
@@ -75,10 +72,13 @@
             this.trackBar_numberOfInfected = new System.Windows.Forms.TrackBar();
             this.trackBar_numberOfPeople = new System.Windows.Forms.TrackBar();
             this.move_timer = new System.Windows.Forms.Timer(this.components);
+            this.imitation_start_button = new yt_DesignUI.yt_Button();
             this.new_mutation = new yt_DesignUI.yt_Button();
             this.button_pause = new yt_DesignUI.yt_Button();
             this.button_play = new yt_DesignUI.yt_Button();
             this.button_reset = new yt_DesignUI.yt_Button();
+            this.save_into_file_button = new yt_DesignUI.yt_Button();
+            this.day_form = new yt_DesignUI.yt_Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.groupBoxSpeed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Healthy)).BeginInit();
@@ -462,61 +462,6 @@
             this.groupBox_info.TabStop = false;
             this.groupBox_info.Visible = false;
             // 
-            // save_into_file_button
-            // 
-            this.save_into_file_button.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.save_into_file_button.BackColorAdditional = System.Drawing.Color.Navy;
-            this.save_into_file_button.BackColorGradientEnabled = true;
-            this.save_into_file_button.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.save_into_file_button.BorderColor = System.Drawing.Color.Tomato;
-            this.save_into_file_button.BorderColorEnabled = false;
-            this.save_into_file_button.BorderColorOnHover = System.Drawing.Color.Tomato;
-            this.save_into_file_button.BorderColorOnHoverEnabled = false;
-            this.save_into_file_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.save_into_file_button.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.save_into_file_button.ForeColor = System.Drawing.Color.White;
-            this.save_into_file_button.Location = new System.Drawing.Point(137, 142);
-            this.save_into_file_button.Name = "save_into_file_button";
-            this.save_into_file_button.RippleColor = System.Drawing.Color.Red;
-            this.save_into_file_button.RoundingEnable = true;
-            this.save_into_file_button.Size = new System.Drawing.Size(227, 50);
-            this.save_into_file_button.TabIndex = 38;
-            this.save_into_file_button.Text = "Сохранить в файл";
-            this.save_into_file_button.TextHover = null;
-            this.save_into_file_button.UseDownPressEffectOnClick = true;
-            this.save_into_file_button.UseRippleEffect = true;
-            this.save_into_file_button.UseVisualStyleBackColor = false;
-            this.save_into_file_button.UseZoomEffectOnHover = false;
-            this.save_into_file_button.Visible = false;
-            // 
-            // day_form
-            // 
-            this.day_form.BackColor = System.Drawing.Color.Red;
-            this.day_form.BackColorAdditional = System.Drawing.Color.Black;
-            this.day_form.BackColorGradientEnabled = true;
-            this.day_form.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.day_form.BorderColor = System.Drawing.Color.Tomato;
-            this.day_form.BorderColorEnabled = false;
-            this.day_form.BorderColorOnHover = System.Drawing.Color.Tomato;
-            this.day_form.BorderColorOnHoverEnabled = false;
-            this.day_form.Cursor = System.Windows.Forms.Cursors.Default;
-            this.day_form.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.day_form.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.day_form.ForeColor = System.Drawing.Color.White;
-            this.day_form.Location = new System.Drawing.Point(6, 11);
-            this.day_form.Name = "day_form";
-            this.day_form.RippleColor = System.Drawing.Color.Red;
-            this.day_form.RoundingEnable = true;
-            this.day_form.Size = new System.Drawing.Size(89, 42);
-            this.day_form.TabIndex = 19;
-            this.day_form.TabStop = false;
-            this.day_form.Text = "0";
-            this.day_form.TextHover = null;
-            this.day_form.UseDownPressEffectOnClick = false;
-            this.day_form.UseRippleEffect = false;
-            this.day_form.UseVisualStyleBackColor = false;
-            this.day_form.UseZoomEffectOnHover = false;
-            // 
             // groupBox_create
             // 
             this.groupBox_create.BackColor = System.Drawing.Color.Lavender;
@@ -557,33 +502,6 @@
             this.label1.Size = new System.Drawing.Size(171, 16);
             this.label1.TabIndex = 26;
             this.label1.Text = "(до 10% от числа людей)";
-            // 
-            // imitation_start_button
-            // 
-            this.imitation_start_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.imitation_start_button.BackColorAdditional = System.Drawing.Color.Navy;
-            this.imitation_start_button.BackColorGradientEnabled = true;
-            this.imitation_start_button.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.imitation_start_button.BorderColor = System.Drawing.Color.Tomato;
-            this.imitation_start_button.BorderColorEnabled = false;
-            this.imitation_start_button.BorderColorOnHover = System.Drawing.Color.Tomato;
-            this.imitation_start_button.BorderColorOnHoverEnabled = false;
-            this.imitation_start_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imitation_start_button.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.imitation_start_button.ForeColor = System.Drawing.Color.White;
-            this.imitation_start_button.Location = new System.Drawing.Point(329, 489);
-            this.imitation_start_button.Name = "imitation_start_button";
-            this.imitation_start_button.RippleColor = System.Drawing.Color.Black;
-            this.imitation_start_button.RoundingEnable = true;
-            this.imitation_start_button.Size = new System.Drawing.Size(429, 74);
-            this.imitation_start_button.TabIndex = 25;
-            this.imitation_start_button.Text = "Начать имитацию";
-            this.imitation_start_button.TextHover = null;
-            this.imitation_start_button.UseDownPressEffectOnClick = false;
-            this.imitation_start_button.UseRippleEffect = false;
-            this.imitation_start_button.UseVisualStyleBackColor = false;
-            this.imitation_start_button.UseZoomEffectOnHover = false;
-            this.imitation_start_button.Click += new System.EventHandler(this.imitation_start_button_Click);
             // 
             // numberOfInfected
             // 
@@ -648,7 +566,7 @@
             this.trackBar_numberOfPeople.BackColor = System.Drawing.Color.White;
             this.trackBar_numberOfPeople.LargeChange = 10;
             this.trackBar_numberOfPeople.Location = new System.Drawing.Point(377, 172);
-            this.trackBar_numberOfPeople.Maximum = 500;
+            this.trackBar_numberOfPeople.Maximum = 450;
             this.trackBar_numberOfPeople.Minimum = 50;
             this.trackBar_numberOfPeople.Name = "trackBar_numberOfPeople";
             this.trackBar_numberOfPeople.Size = new System.Drawing.Size(294, 45);
@@ -662,8 +580,35 @@
             // 
             // move_timer
             // 
-            this.move_timer.Interval = 400;
+            this.move_timer.Interval = 450;
             this.move_timer.Tick += new System.EventHandler(this.move_timer_Tick);
+            // 
+            // imitation_start_button
+            // 
+            this.imitation_start_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.imitation_start_button.BackColorAdditional = System.Drawing.Color.Navy;
+            this.imitation_start_button.BackColorGradientEnabled = true;
+            this.imitation_start_button.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.imitation_start_button.BorderColor = System.Drawing.Color.Tomato;
+            this.imitation_start_button.BorderColorEnabled = false;
+            this.imitation_start_button.BorderColorOnHover = System.Drawing.Color.Tomato;
+            this.imitation_start_button.BorderColorOnHoverEnabled = false;
+            this.imitation_start_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imitation_start_button.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.imitation_start_button.ForeColor = System.Drawing.Color.White;
+            this.imitation_start_button.Location = new System.Drawing.Point(329, 489);
+            this.imitation_start_button.Name = "imitation_start_button";
+            this.imitation_start_button.RippleColor = System.Drawing.Color.Black;
+            this.imitation_start_button.RoundingEnable = true;
+            this.imitation_start_button.Size = new System.Drawing.Size(429, 74);
+            this.imitation_start_button.TabIndex = 25;
+            this.imitation_start_button.Text = "Начать имитацию";
+            this.imitation_start_button.TextHover = null;
+            this.imitation_start_button.UseDownPressEffectOnClick = false;
+            this.imitation_start_button.UseRippleEffect = false;
+            this.imitation_start_button.UseVisualStyleBackColor = false;
+            this.imitation_start_button.UseZoomEffectOnHover = false;
+            this.imitation_start_button.Click += new System.EventHandler(this.imitation_start_button_Click);
             // 
             // new_mutation
             // 
@@ -772,6 +717,62 @@
             this.button_reset.UseVisualStyleBackColor = false;
             this.button_reset.UseZoomEffectOnHover = false;
             this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
+            // 
+            // save_into_file_button
+            // 
+            this.save_into_file_button.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.save_into_file_button.BackColorAdditional = System.Drawing.Color.Navy;
+            this.save_into_file_button.BackColorGradientEnabled = true;
+            this.save_into_file_button.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.save_into_file_button.BorderColor = System.Drawing.Color.Tomato;
+            this.save_into_file_button.BorderColorEnabled = false;
+            this.save_into_file_button.BorderColorOnHover = System.Drawing.Color.Tomato;
+            this.save_into_file_button.BorderColorOnHoverEnabled = false;
+            this.save_into_file_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.save_into_file_button.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.save_into_file_button.ForeColor = System.Drawing.Color.White;
+            this.save_into_file_button.Location = new System.Drawing.Point(137, 142);
+            this.save_into_file_button.Name = "save_into_file_button";
+            this.save_into_file_button.RippleColor = System.Drawing.Color.Red;
+            this.save_into_file_button.RoundingEnable = true;
+            this.save_into_file_button.Size = new System.Drawing.Size(227, 50);
+            this.save_into_file_button.TabIndex = 38;
+            this.save_into_file_button.Text = "Сохранить в файл";
+            this.save_into_file_button.TextHover = null;
+            this.save_into_file_button.UseDownPressEffectOnClick = true;
+            this.save_into_file_button.UseRippleEffect = true;
+            this.save_into_file_button.UseVisualStyleBackColor = false;
+            this.save_into_file_button.UseZoomEffectOnHover = false;
+            this.save_into_file_button.Visible = false;
+            this.save_into_file_button.Click += new System.EventHandler(this.save_into_file_button_Click);
+            // 
+            // day_form
+            // 
+            this.day_form.BackColor = System.Drawing.Color.Red;
+            this.day_form.BackColorAdditional = System.Drawing.Color.Black;
+            this.day_form.BackColorGradientEnabled = true;
+            this.day_form.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.day_form.BorderColor = System.Drawing.Color.Tomato;
+            this.day_form.BorderColorEnabled = false;
+            this.day_form.BorderColorOnHover = System.Drawing.Color.Tomato;
+            this.day_form.BorderColorOnHoverEnabled = false;
+            this.day_form.Cursor = System.Windows.Forms.Cursors.Default;
+            this.day_form.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.day_form.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.day_form.ForeColor = System.Drawing.Color.White;
+            this.day_form.Location = new System.Drawing.Point(6, 11);
+            this.day_form.Name = "day_form";
+            this.day_form.RippleColor = System.Drawing.Color.Red;
+            this.day_form.RoundingEnable = true;
+            this.day_form.Size = new System.Drawing.Size(89, 42);
+            this.day_form.TabIndex = 19;
+            this.day_form.TabStop = false;
+            this.day_form.Text = "0";
+            this.day_form.TextHover = null;
+            this.day_form.UseDownPressEffectOnClick = false;
+            this.day_form.UseRippleEffect = false;
+            this.day_form.UseVisualStyleBackColor = false;
+            this.day_form.UseZoomEffectOnHover = false;
             // 
             // Imitation
             // 
