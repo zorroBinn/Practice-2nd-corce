@@ -14,11 +14,13 @@ namespace Practice_2nd_corce
 {
     public partial class Create_New : Form
     {
+        //Стандартный конструктор формы
         public Create_New()
         {
             InitializeComponent();
         }
 
+        //Выбор типа болезни - открытие соответствующей вкладки
         private void create_tabs_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (create_tabs.SelectedIndex == 0) 
@@ -38,11 +40,13 @@ namespace Practice_2nd_corce
             }
         }
 
+        //Выбор вероятности заражения и её отображение у бактерии
         private void trackBar_bacteria_infection_Scroll(object sender, EventArgs e)
         {
             this.bacteria_infection.Text = this.trackBar_bacteria_infection.Value.ToString();
         }
 
+        //Выбор инкубационного периода и его отображение у бактерии
         private void trackBar_bacteria_incub_Scroll(object sender, EventArgs e)
         {
             this.bacteria_incub.Text = this.trackBar_bacteria_incub.Value.ToString();
@@ -60,6 +64,7 @@ namespace Practice_2nd_corce
             }
         }
 
+        //Выбор периода болезни и его отображение у бактерии
         private void trackBar_bacteria_illness_Scroll(object sender, EventArgs e)
         {
             this.bacteria_illness.Text = this.trackBar_bacteria_illness.Value.ToString();
@@ -77,16 +82,19 @@ namespace Practice_2nd_corce
             }
         }
 
+        //Выбор летальности и её отображение у бактерии
         private void trackBar_bacteria_death_Scroll(object sender, EventArgs e)
         {
             this.bacteria_death.Text = this.trackBar_bacteria_death.Value.ToString();
         }
 
+        //Выбор вероятности заражения и её отображение у вируса
         private void trackBar_virus_infection_Scroll(object sender, EventArgs e)
         {
             this.virus_infection.Text = this.trackBar_virus_infection.Value.ToString();
         }
 
+        //Выбор инкубационного периода и его отображение у вируса
         private void trackBar_virus_incub_Scroll(object sender, EventArgs e)
         {
             this.virus_incub.Text = this.trackBar_virus_incub.Value.ToString();
@@ -104,6 +112,7 @@ namespace Practice_2nd_corce
             }
         }
 
+        //Выбор периода болезни и его отображение у вируса
         private void trackBar_virus_illness_Scroll(object sender, EventArgs e)
         {
             this.virus_illness.Text = this.trackBar_virus_illness.Value.ToString();
@@ -121,16 +130,19 @@ namespace Practice_2nd_corce
             }
         }
 
+        //Выбор летальности и её отображение у вируса
         private void trackBar_virus_death_Scroll(object sender, EventArgs e)
         {
             this.virus_death.Text = this.trackBar_virus_death.Value.ToString();
         }
 
+        //Выбор вероятности заражения и её отображение у приона
         private void trackBar_prion_infection_Scroll(object sender, EventArgs e)
         {
             this.prion_infection.Text = this.trackBar_prion_infection.Value.ToString();
         }
 
+        //Выбор периода болезни и его отображение у приона
         private void trackBar_prion_illness_Scroll(object sender, EventArgs e)
         {
             this.prion_illness.Text = this.trackBar_prion_illness.Value.ToString(); 
@@ -148,11 +160,13 @@ namespace Practice_2nd_corce
             }
         }
 
+        //Выбор летальности и её отображение у приона
         private void trackBar_prion_death_Scroll(object sender, EventArgs e)
         {
             this.prion_death.Text = this.trackBar_prion_death.Value.ToString();
         }
 
+        //Метод проверки имени на пустоту и отображение кнопки "Создать"
         private void check_textUpdate(System.Windows.Forms.ComboBox name)
         {
             if (name.Text != "")
@@ -165,36 +179,43 @@ namespace Practice_2nd_corce
             }
         }
 
+        //Обработка обновления текста имени бактерии
         private void comboBox_bacteria_name_TextUpdate(object sender, EventArgs e)
         {
             check_textUpdate(comboBox_bacteria_name);
         }
 
+        //Обработка обновления текста имени вируса
         private void comboBox_virus_name_TextUpdate(object sender, EventArgs e)
         {
             check_textUpdate(comboBox_virus_name);
         }
 
+        //Обработка обновления текста имени приона
         private void comboBox_prion_name_TextUpdate(object sender, EventArgs e)
         {
             check_textUpdate(comboBox_prion_name);
         }
 
+        //Обработка обновления текста имени бактерии при выборе из предложенных
         private void comboBox_bacteria_name_SelectedIndexChanged(object sender, EventArgs e)
         {
             check_textUpdate(comboBox_bacteria_name);
         }
 
+        //Обработка обновления текста имени вируса при выборе из предложенных
         private void comboBox_virus_name_SelectedIndexChanged(object sender, EventArgs e)
         {
             check_textUpdate(comboBox_virus_name);
         }
 
+        //Обработка обновления текста имени приона при выборе из предложенных
         private void comboBox_prion_name_SelectedIndexChanged(object sender, EventArgs e)
         {
             check_textUpdate(comboBox_prion_name);
         }
 
+        //Нажатие на кнопку "Создать", создание файла с информацией о вирусе
         private void Create_Button_Click(object sender, EventArgs e)
         {
             try
@@ -241,11 +262,13 @@ namespace Practice_2nd_corce
             }
         }
 
+        //Закрытие формы, отображение главного меню
         private void Create_New_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Owner.Show();
         }
 
+        //Метод проверки введённого символа
         private void CheckChar(KeyPressEventArgs args)
         {
             Char ch = (Char)args.KeyChar;
@@ -259,21 +282,25 @@ namespace Practice_2nd_corce
             }
         }
 
+        //Ввод символа в имя бактерии
         private void comboBox_bacteria_name_KeyPress(object sender, KeyPressEventArgs e)
         {
             CheckChar(e);
         }
 
+        //Ввод символа в имя вируса
         private void comboBox_virus_name_KeyPress(object sender, KeyPressEventArgs e)
         {
             CheckChar(e);
         }
 
+        //Ввод символа в имя приона
         private void comboBox_prion_name_KeyPress(object sender, KeyPressEventArgs e)
         {
             CheckChar(e);
         }
 
+        //Отображение краткой справки о бактерии
         private void about_bacteria_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Патогенные бактерии могут проявлять свою вредность разными способами:\n" +
@@ -284,6 +311,7 @@ namespace Practice_2nd_corce
                 "Мутация способна изменить вероятность заражения, период болезни или летальность.", "Бактерия", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        //Отображение краткой справки о вирусе
         private void about_virus_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Вирусы - это неклеточные инфекционные агенты,\n" +
@@ -293,6 +321,7 @@ namespace Practice_2nd_corce
                 "Мутация способна изменить вероятность заражения, период болезни или летальность.", "Вирус", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        //Отображение краткой справки о прионе
         private void about_prion_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Прион - это особый вид инфекционного агента, который не содержит нуклеиновых кислот,\n" +
@@ -307,6 +336,7 @@ namespace Practice_2nd_corce
                 "Шанс на мутацию очень мал, однако она способна изменить все параметры болезни.", "Прион", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        //Всплывающая подсказка над кнопкой "О бактерии"
         private void about_bacteria_MouseHover(object sender, EventArgs e)
         {
             ToolTip t = new ToolTip();
@@ -315,6 +345,7 @@ namespace Practice_2nd_corce
             t.IsBalloon = true;
         }
 
+        //Всплывающая подсказка над кнопкой "О вирусе"
         private void about_virus_MouseHover(object sender, EventArgs e)
         {
             ToolTip t = new ToolTip();
@@ -323,6 +354,7 @@ namespace Practice_2nd_corce
             t.IsBalloon = true;
         }
 
+        //Всплывающая подсказка над кнопкой "О прионе"
         private void about_prion_MouseHover(object sender, EventArgs e)
         {
             ToolTip t = new ToolTip();

@@ -649,6 +649,7 @@ namespace Practice_2nd_corce
             this.Owner.Show();
         }
 
+        //Сохранение в файл результатов по нажатии кнопки
         private void save_into_file_button_Click(object sender, EventArgs e)
         {
             SaveFileDialog save = new SaveFileDialog();
