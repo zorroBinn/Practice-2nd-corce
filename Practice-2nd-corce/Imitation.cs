@@ -180,7 +180,7 @@ namespace Practice_2nd_corce
             }
             pictureBox.Invalidate();
             NumberInfoUpdate();
-            if(Tick % 7 == 0)
+            if(Tick % 8 == 0)
             {
                 DayUpdate();
             } 
@@ -492,7 +492,7 @@ namespace Practice_2nd_corce
         {
             if (radioButton1.Checked)
             {
-                move_timer.Interval = 100;
+                move_timer.Interval = 450;
             }
         }
 
@@ -501,7 +501,7 @@ namespace Practice_2nd_corce
         {
             if (radioButton2.Checked)
             {
-                move_timer.Interval = 50;
+                move_timer.Interval = 225;
             }
         }
 
@@ -510,7 +510,7 @@ namespace Practice_2nd_corce
         {
             if (radioButton3.Checked)
             {
-                move_timer.Interval = 25;
+                move_timer.Interval = 100;
             }
         }
 
@@ -519,7 +519,7 @@ namespace Practice_2nd_corce
         {
             if (radioButton4.Checked)
             {
-                move_timer.Interval = 10;
+                move_timer.Interval = 45;
             }
         }
 
@@ -649,5 +649,51 @@ namespace Practice_2nd_corce
             this.Owner.Show();
         }
 
+        private void save_into_file_button_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "(*.txt)|*.txt";
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    StreamWriter file = new StreamWriter(save.FileName, false);
+                    file.WriteLine(type.Text + " '" + disease.Name + "'");
+                    file.WriteLine();
+                    file.WriteLine("Параметры болезни:");
+                    file.WriteLine("Вероятность заражения: " + disease.Infected + "%");
+                    if(disease.Type != 2)
+                    {
+                        file.WriteLine("Инкубационный период (дней): " + disease.Incub);
+                    }
+                    file.WriteLine("Период болезни (дней): " + disease.Illness);
+                    file.WriteLine("Летальность: " + disease.Death + "%");
+                    file.WriteLine();
+                    file.WriteLine("Имитация продлилась (дней): " + Day);
+                    file.WriteLine("Человек, участвующих в симуляции: " + numberOfPeople.Text);
+                    file.WriteLine("Изначально инфицированных: " + numberOfInfected.Text); 
+                    file.WriteLine();
+                    file.WriteLine("Итоговые значения симуляции: ");
+                    if (int.Parse(number_of_healthy.Text) != 0)
+                    {
+                        file.WriteLine("Осталось здоровых: " + number_of_healthy.Text);
+                    }
+                    if(int.Parse(number_of_recovery.Text) != 0)
+                    {
+                        file.WriteLine("Исцелено: " + number_of_recovery.Text);
+                    }
+                    if (int.Parse(number_of_dead.Text) != 0)
+                    {
+                        file.WriteLine("Умерших: " + number_of_dead.Text);
+                    }
+                    file.Close();
+                }
+                catch (Exception) 
+                {
+                    MessageBox.Show("Ошибка сохранения файла", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                MessageBox.Show("Файл сохранён!", "Сохранено!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
