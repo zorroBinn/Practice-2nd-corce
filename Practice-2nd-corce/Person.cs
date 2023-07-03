@@ -15,7 +15,7 @@ namespace Practice_2nd_corce
         public Person() 
         {
             State = "Empty";
-            Color = System.Drawing.Color.Gainsboro;
+            Color = System.Drawing.Color.WhiteSmoke;
             Age = 0;
         }
     }
