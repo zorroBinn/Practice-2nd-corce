@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace Practice_2nd_corce
 {
-    public partial class Imitation : Form
+    public partial class Imitation : Form //Форма имитации
     {
         private Disease disease;           //Патогенный микроорганизм
         private Person[,] persons;         //Массив людей

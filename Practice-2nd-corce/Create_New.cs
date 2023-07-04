@@ -12,7 +12,7 @@ using System.Globalization;
 
 namespace Practice_2nd_corce
 {
-    public partial class Create_New : Form
+    public partial class Create_New : Form //Форма создания патогена
     {
         //Стандартный конструктор формы
         public Create_New()

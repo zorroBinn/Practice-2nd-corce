@@ -8,11 +8,11 @@ namespace Practice_2nd_corce
 {
     internal class Person
     {
-        public string State { get; set; }
-        public System.Drawing.Color Color { get; set; }
-        public int Age { get; set; }
+        public string State { get; set; } //Текущий статус
+        public System.Drawing.Color Color { get; set; } //Цвет
+        public int Age { get; set; } //Возраст (у человека)
 
-        public Person() 
+        public Person() //Конструктор по умолчанию (пустая ячейка)
         {
             State = "Empty";
             Color = System.Drawing.Color.WhiteSmoke;

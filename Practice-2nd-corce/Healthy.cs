@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Practice_2nd_corce
 {
-    internal class Healthy : Person
+    internal class Healthy : Person //Здоровый человек
     {
-        public int Immunity { get; set; }
+        public int Immunity { get; set; } //Показатель имунитета
 
-        public Healthy()
+        public Healthy() //Конструктор по умолчанию
         {
             Age = Randomization.Rand(15, 80);
             State = "Здоров";

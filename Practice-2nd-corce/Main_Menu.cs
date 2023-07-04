@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Practice_2nd_corce
 {
-    public partial class Main_Menu : Form
+    public partial class Main_Menu : Form //Главное меню
     {
         //Стандартный конструктор формы
         public Main_Menu()

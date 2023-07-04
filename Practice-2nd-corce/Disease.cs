@@ -8,16 +8,16 @@ using System.Windows.Forms;
 
 namespace Practice_2nd_corce
 {
-    internal class Disease
+    internal class Disease //Патоген
     {
-        public int Type { get; set; }
-        public string Name { get; set; }
-        public int Infected { get; set; }
-        public int Incub { get; set; }
-        public int Illness { get; set; }
-        public int Death { get; set; }
+        public int Type { get; set; } //Тип патогена
+        public string Name { get; set; } //Название патогена
+        public int Infected { get; set; } //Вероятность заражения патогена
+        public int Incub { get; set; } //Инкубационный период патогена
+        public int Illness { get; set; } //Период болезни патогена
+        public int Death { get; set; } //Летальность патогена
 
-        public Disease() 
+        public Disease() //Конструктор по умолчанию
         {
             try
             {
@@ -36,7 +36,7 @@ namespace Practice_2nd_corce
             }
         }
 
-        public bool Mutation()
+        public bool Mutation() //Метод "мутация патогена". Мутация происходит с некоторым шансом (зависит от типа патогена) каждый день
         {
             int mutation_probability;
             switch(Type)
@@ -66,7 +66,7 @@ namespace Practice_2nd_corce
             return false;
         }
 
-        private bool MutationSet(int min, int max, int min_infected)
+        private bool MutationSet(int min, int max, int min_infected) //Метод, определяющий направление мутации
         {
             int mutation_type = Randomization.Rand(1, 3);
             int mutation_updown = Randomization.Rand(1, 2);

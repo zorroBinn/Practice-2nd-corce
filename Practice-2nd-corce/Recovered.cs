@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Practice_2nd_corce
 {
-    internal class Recovered : Person
+    internal class Recovered : Person //Исцелённый человек
     {
-        public int DayOfRecovery { get; set; }
+        public int DayOfRecovery { get; set; } //День исцеления
 
-        public Recovered(int day, int age) 
+        public Recovered(int day, int age) //Конструктор с параметрами
         {
             DayOfRecovery = day;
             Age = age;

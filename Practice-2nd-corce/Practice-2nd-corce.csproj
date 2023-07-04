@@ -79,7 +79,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Disease.cs" />
-    <Compile Include="Randomization.cs" />
+    <Compile Include="Randomization\Randomization.cs" />
     <Compile Include="Recovered.cs" />
     <Compile Include="ForDrawing\yt_Button.cs">
       <SubType>Component</SubType>

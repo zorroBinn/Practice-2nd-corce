@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Practice_2nd_corce
 {
-    internal class Infected : Person
+    internal class Infected : Person //Инфицированный человек
     {
-        public int IncubDays { get; set; }
-        public int InfectionDays { get; set; }
-        public int DayOfDisease { get; set; }
+        public int IncubDays { get; set; } //Оставшихся дней инкубационного периода
+        public int InfectionDays { get; set; } //Оставшихся дней периода болезни
+        public int DayOfDisease { get; set; } //День заражения
 
-        public Infected(int incub, int infection, int day, int tick, int age)
+        public Infected(int incub, int infection, int day, int tick, int age) //Конструктор с параметрами
         {
             IncubDays = incub;
             InfectionDays = infection;
@@ -30,7 +30,7 @@ namespace Practice_2nd_corce
             }
         }
 
-        public void ReduceIncub()
+        public void ReduceIncub() //Уменьшение оставшихся дней инкубационного периода с изменением статуса
         {
             IncubDays -= 1;
             if (IncubDays == 0)
@@ -40,7 +40,7 @@ namespace Practice_2nd_corce
             }
         }
 
-        public void ReduceInfection() 
+        public void ReduceInfection() //Уменьшение оставшихся дней периода болезни
         { 
             InfectionDays -= 1;
         }
