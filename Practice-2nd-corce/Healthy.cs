@@ -8,9 +8,9 @@ namespace Practice_2nd_corce
 {
     internal class Healthy : Person //Здоровый человек
     {
-        public int Immunity { get; set; } //Показатель имунитета
+        public int Immunity { get; set; } //Показатель иммунитета
 
-        public Healthy() //Конструктор по умолчанию
+        public Healthy() //Конструктор без параметров
         {
             Age = Randomization.Rand(15, 80);
             State = "Здоров";

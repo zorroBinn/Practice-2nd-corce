@@ -12,7 +12,7 @@ namespace Practice_2nd_corce
         public System.Drawing.Color Color { get; set; } //Цвет
         public int Age { get; set; } //Возраст (у человека)
 
-        public Person() //Конструктор по умолчанию (пустая ячейка)
+        public Person() //Конструктор без параметров (пустая ячейка)
         {
             State = "Empty";
             Color = System.Drawing.Color.WhiteSmoke;

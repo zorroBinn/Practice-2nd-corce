@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Practice_2nd_corce.Person">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAhAAAAAA=</HashCode>
+      <FileName>Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Practice_2nd_corce.Infected">
+    <Position X="6.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAYAAAAABAAAQAAA=</HashCode>
+      <FileName>Infected.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Practice_2nd_corce.Healthy">
+    <Position X="5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Healthy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Practice_2nd_corce.Dead">
+    <Position X="10.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dead.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Practice_2nd_corce.Recovered">
+    <Position X="8.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Recovered.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Practice_2nd_corce.Disease">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQACAAAAQAgAQAAAMAAAAE=</HashCode>
+      <FileName>Disease.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Practice_2nd_corce.Imitation">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>SAcEBKQBNXIEBFKEADiAMHAvcWAlJIgEOQEMsBho2FI=</HashCode>
+      <FileName>Imitation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

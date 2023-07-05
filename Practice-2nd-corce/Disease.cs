@@ -17,7 +17,7 @@ namespace Practice_2nd_corce
         public int Illness { get; set; } //Период болезни патогена
         public int Death { get; set; } //Летальность патогена
 
-        public Disease() //Конструктор по умолчанию
+        public Disease() //Конструктор без параметров
         {
             try
             {
@@ -56,8 +56,8 @@ namespace Practice_2nd_corce
                     }
                     break;
                 case 2:
-                    mutation_probability = Randomization.Rand(1, 3);
-                    if (Randomization.Rand(1, 100) < mutation_probability)
+                    mutation_probability = Randomization.Rand(1, 2);
+                    if (Randomization.Rand(1, 100) <= mutation_probability)
                     {
                         if (MutationSet(1, 10, 3)) return true;
                     }
